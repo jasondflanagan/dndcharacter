@@ -7,7 +7,7 @@
 }
 
 .nav-link{
-    color: white;
+    color: black;
 }
 
 h1{
@@ -18,6 +18,18 @@ h1{
     font-family: 'MedievalSharp', cursive;
     font-size: 1.5em;
     color: black;
+}
+
+.card-title{
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.5em;
+    color: black; 
+}
+
+.card-text{
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1em;
+    color: black; 
 }
 
 .site-footer{
