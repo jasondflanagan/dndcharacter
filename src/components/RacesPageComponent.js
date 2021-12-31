@@ -29,8 +29,8 @@ class RacesPage extends Component {
 
         return (
             <div className="container">
-                <div className='row mt-3 mb-3'>
-                    <h1>Explore Available Races</h1>
+                <div className='row pagetitle'>
+                    <p>Explore Available Races</p>
                 </div>
                 <div className="row">
                     {raceslist}

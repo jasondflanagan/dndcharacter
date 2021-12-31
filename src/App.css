@@ -3,33 +3,32 @@
 .navbar{
     font-family: 'MedievalSharp', cursive;
     font-size: 1.5em;
-    background-image: url(/public/assets/wood-background.jpg)
+    background-image: url(/public/assets/wood-background.jpg);
 }
 
-.nav-link{
+.pagetitle{
+    text-align: center;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 3em;
+    padding-top: 5px;
+    margin-bottom: 3px;
+
+}
+
+.nav-item{
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.5em;
+    color: black;
+}
+
+.tab-content{
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1em;
     color: black;
 }
 
 h1{
     font-family: 'MedievalSharp', cursive;
-}
-
-.card-header{
-    font-family: 'MedievalSharp', cursive;
-    font-size: 1.5em;
-    color: black;
-}
-
-.card-title{
-    font-family: 'MedievalSharp', cursive;
-    font-size: 1.5em;
-    color: black; 
-}
-
-.card-text{
-    font-family: 'MedievalSharp', cursive;
-    font-size: 1em;
-    color: black; 
 }
 
 .site-footer{
