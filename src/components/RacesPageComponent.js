@@ -16,10 +16,10 @@ class RacesPage extends Component {
             return (
                 <Card key={race.id} className="col-sm-4">
                     <Tabs defaultActiveKey="image" id="race-tabs">
-                        <Tab eventKey="image" title={race.name}>
+                        <Tab eventKey="image" title={race.name} className='cardheader'>
                             <Image fluid src={race.image} alt={race.name}/>
                         </Tab>
-                        <Tab eventKey="facts" title="Facts">
+                        <Tab eventKey="facts" title="Facts" className='cardheader'>
                             {race.main}
                         </Tab>
                     </Tabs>
