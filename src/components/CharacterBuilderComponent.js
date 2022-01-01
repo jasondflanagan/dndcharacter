@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, InputGroup, FormSelect, FormLabel, Image, Card, Tabs, Tab } from 'react-bootstrap';
-import { RACES } from './RaceList';
+import { RACES } from '../shared/RacesList';
+import { CLASSLIST } from '../shared/ClassesList';
 
 
 
@@ -10,14 +11,23 @@ class CharacterBuilder extends Component {
         super(props)
         this.state = {
             races: RACES,
-            displayedRaceIndex: '0'
+            classlist: CLASSLIST,
+            displayedRaceIndex: '0',
+            displayedClassIndex: '0'
         }
         this.updateSelectedRace = this.updateSelectedRace.bind(this)
+        this.updateSelectedClass = this.updateSelectedClass.bind(this)
     }
 
     updateSelectedRace(selected){
         this.setState({
             displayedRaceIndex: selected.target.value
+        })
+    }
+
+    updateSelectedClass(selected){
+        this.setState({
+            displayedClassIndex: selected.target.value
         })
     }
 
@@ -42,6 +52,27 @@ class CharacterBuilder extends Component {
         )
     }
 
+    renderSelectedClass(index){
+
+        console.log(index)
+        const classcard = this.state.classlist.filter(classindex => classindex.id === parseInt(index))[0]
+        console.log(classcard)
+
+
+        return(
+            <Card key={classcard.id} className="col">
+                    <Tabs defaultActiveKey="image" id="race-tabs">
+                        <Tab eventKey="image" title={classcard.name} className='cardheader'>
+                            <Image fluid src={classcard.image} alt={classcard.name}/>
+                        </Tab>
+                        <Tab eventKey="facts" title="Facts" className='cardheader'>
+                            {classcard.main}
+                        </Tab>
+                    </Tabs>
+                </Card>
+        )
+    }
+
     render() {
 
         return (
@@ -51,8 +82,12 @@ class CharacterBuilder extends Component {
                 </div>
                 <div className='row'>
                     <div className='col-sm-5'>
+                        <div className='row'>
                         {this.renderSelectedRace(this.state.displayedRaceIndex)}
-                        <h1>ClassCard Diplayed</h1>
+                        </div>
+                        <div className='row'>
+                        {this.renderSelectedClass(this.state.displayedClassIndex)}
+                        </div>
                     </div>
                     <div className='col-sm-7'>
                         <Form>
@@ -73,7 +108,7 @@ class CharacterBuilder extends Component {
                             </InputGroup>
                             <InputGroup>
                                 <FormLabel id="classtype">Class</FormLabel>
-                                <FormSelect>
+                                <FormSelect onChange={this.updateSelectedClass}>
                                     <option>Select a Class</option>
                                     <option value='0'>Barbarian</option>
                                     <option value='1'>Bard</option>

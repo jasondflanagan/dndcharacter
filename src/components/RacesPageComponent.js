@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Tab, Tabs, Image } from 'react-bootstrap';
-import { RACES } from './RaceList';
+import { RACES } from '../shared/RacesList';
 
 class RacesPage extends Component {
 
