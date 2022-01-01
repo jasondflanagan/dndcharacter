@@ -17,7 +17,7 @@ class CharacterBuilder extends Component {
 
     updateSelectedRace(selected){
         this.setState({
-            displayedRaceIndex: selected.target.value-1
+            displayedRaceIndex: selected.target.value
         })
     }
 
@@ -59,16 +59,16 @@ class CharacterBuilder extends Component {
                             <InputGroup>
                                 <FormLabel id="racetype">Race</FormLabel>
                                 <FormSelect onChange={this.updateSelectedRace}>
-                                    <option value='0'>Select A Race</option>                                    
-                                    <option value='1'>Dragonborn</option>
-                                    <option value='2'>Dwarf</option>
-                                    <option value='3'>Elf</option>
-                                    <option value='4'>Gnome</option>
-                                    <option value='5'>Half-Elf</option>
-                                    <option value='6'>Halfling</option>
-                                    <option value='7'>Half-Orc</option>
-                                    <option value='8'>Human</option>
-                                    <option value='9'>Tiefling</option>
+                                    <option>Select A Race</option>                                    
+                                    <option value='0'>Dragonborn</option>
+                                    <option value='1'>Dwarf</option>
+                                    <option value='2'>Elf</option>
+                                    <option value='3'>Gnome</option>
+                                    <option value='4'>Half-Elf</option>
+                                    <option value='5'>Halfling</option>
+                                    <option value='6'>Half-Orc</option>
+                                    <option value='7'>Human</option>
+                                    <option value='8'>Tiefling</option>
                                 </FormSelect>
                             </InputGroup>
                             <InputGroup>
