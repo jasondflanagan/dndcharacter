@@ -24,6 +24,7 @@ class CharacterBuilder extends Component {
         this.updateSelectedClass = this.updateSelectedClass.bind(this)
         this.toggleAbilityModal = this.toggleAbilityModal.bind(this)
         this.toggleNameModal = this.toggleNameModal.bind(this)
+        this.toggleAdvancedOptions = this.toggleAdvancedOptions.bind(this)
     }
 
     toggleAbilityModal() {
