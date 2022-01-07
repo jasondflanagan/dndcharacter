@@ -39,16 +39,16 @@ class CharacterBuilder extends Component {
 
 
         return(
-            <Card key={racecard.id} className="col">
-                    <Tabs defaultActiveKey="image" id="race-tabs">
-                        <Tab eventKey="image" title={racecard.name} className='cardheader'>
-                            <Image fluid src={racecard.image} alt={racecard.name}/>
-                        </Tab>
-                        <Tab eventKey="facts" title="Facts" className='cardheader'>
-                            {racecard.main}
-                        </Tab>
-                    </Tabs>
-                </Card>
+            <Card key={racecard.id} className="col col-md-7 ">
+                <Tabs defaultActiveKey="image" id="race-tabs">
+                    <Tab eventKey="image" title={racecard.name} className='cardheader'>
+                        <Image fluid src={racecard.image} alt={racecard.name}/>
+                    </Tab>
+                    <Tab eventKey="facts" title="Facts" className='cardheader'>
+                        {racecard.main}
+                    </Tab>
+                </Tabs>
+            </Card>
         )
     }
 
@@ -60,16 +60,16 @@ class CharacterBuilder extends Component {
 
 
         return(
-            <Card key={classcard.id} className="col">
-                    <Tabs defaultActiveKey="image" id="race-tabs">
-                        <Tab eventKey="image" title={classcard.name} className='cardheader'>
-                            <Image fluid src={classcard.image} alt={classcard.name}/>
-                        </Tab>
-                        <Tab eventKey="facts" title="Facts" className='cardheader'>
-                            {classcard.main}
-                        </Tab>
-                    </Tabs>
-                </Card>
+            <Card key={classcard.id} className="col col-md-7">
+                <Tabs defaultActiveKey="image" id="race-tabs">
+                    <Tab eventKey="image" title={classcard.name} className='cardheader'>
+                        <Image fluid src={classcard.image} alt={classcard.name}/>
+                    </Tab>
+                    <Tab eventKey="facts" title="Facts" className='cardheader'>
+                        {classcard.main}
+                    </Tab>
+                </Tabs>
+            </Card>
         )
     }
 
@@ -83,10 +83,10 @@ class CharacterBuilder extends Component {
                 <div className='row'>
                     <div className='col-sm-5'>
                         <div className='row'>
-                        {this.renderSelectedRace(this.state.displayedRaceIndex)}
+                            {this.renderSelectedRace(this.state.displayedRaceIndex)}
                         </div>
                         <div className='row'>
-                        {this.renderSelectedClass(this.state.displayedClassIndex)}
+                            {this.renderSelectedClass(this.state.displayedClassIndex)}
                         </div>
                     </div>
                     <div className='col-sm-7'>
