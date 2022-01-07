@@ -14,7 +14,7 @@ class RacesPage extends Component {
     render() {
         const raceslist = this.state.races.map(race => {
             return (
-                <Card key={race.id} className="col-sm-4">
+                <Card key={race.id} className="col col-sm-4">
                     <Tabs defaultActiveKey="image" id="race-tabs">
                         <Tab eventKey="image" title={race.name} className='cardheader'>
                             <Image fluid src={race.image} alt={race.name}/>

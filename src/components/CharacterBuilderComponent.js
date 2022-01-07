@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, InputGroup, FormSelect, FormLabel, Image, Card, Tabs, Tab } from 'react-bootstrap';
+import {Input, Label, FormGroup, Col, Row } from 'reactstrap';
 import { RACES } from '../shared/RacesList';
 import { CLASSLIST } from '../shared/ClassesList';
 
@@ -31,6 +32,98 @@ class CharacterBuilder extends Component {
         })
     }
 
+    render() {
+
+        return (
+            <div className='container'>
+                <div className='row pagetitle'>
+                    <p>Create Your Character</p>
+                </div>
+                <div className='row'>
+                    <div align="center" className='row'>
+                        <Form>
+                            <div className="col-sm-3">    
+                            <FormGroup>
+                                <Label id="racetype">Race</Label>
+                                <Input type="select" onChange={this.updateSelectedRace}>
+                                    <option>Select A Race</option>                                    
+                                    <option value='0'>Dragonborn</option>
+                                    <option value='1'>Dwarf</option>
+                                    <option value='2'>Elf</option>
+                                    <option value='3'>Gnome</option>
+                                    <option value='4'>Half-Elf</option>
+                                    <option value='5'>Halfling</option>
+                                    <option value='6'>Half-Orc</option>
+                                    <option value='7'>Human</option>
+                                    <option value='8'>Tiefling</option>
+                                </Input>
+                            </FormGroup>
+                            </div>
+                            <div className='col-sm-6'>
+                                    {this.renderSelectedRace(this.state.displayedRaceIndex)}
+                            </div>
+                            <div className="col-sm-3">
+                            <FormGroup>
+                                <Label id="classtype">Class</Label>
+                                <Input type="select" onChange={this.updateSelectedClass}>
+                                    <option>Select a Class</option>
+                                    <option value='0'>Barbarian</option>
+                                    <option value='1'>Bard</option>
+                                    <option value='2'>Cleric</option>
+                                    <option value='3'>Druid</option>
+                                    <option value='4'>Fighter</option>
+                                    <option value='5'>Monk</option>
+                                    <option value='6'>Paladin</option>
+                                    <option value='7'>Ranger</option>
+                                    <option value='8'>Sorcerer</option>                                   
+                                    <option value='9'>Warlock</option>
+                                    <option value='10'>Wizard</option>
+                                </Input>
+                            </FormGroup>
+                            </div>
+                            <div className='col-sm-6'>
+                                    {this.renderSelectedClass(this.state.displayedClassIndex)}
+                            </div>
+                            <div className="col-sm-3 col-md-5">
+                            <Label id="Attributes">Attributes</Label>
+                                    <FormGroup>
+                                    <Row>
+                                    <Col md={2}>
+                                    <Label id="attStr">Strength</Label>
+                                    <Input type="number" id="strength" name="str" placeholder="str"/>
+                                    </Col>
+                                    <Col md={2}>
+                                    <Label id="attDex">Dexterity</Label>    
+                                    <Input type="number" id="dexterity" name="dex" placeholder="dex"/>
+                                    </Col>
+                                    
+                                    <Col md={2}>
+                                    <Label id="attCon">Constitution</Label> 
+                                    <Input type="number" id="constitution" name="con" placeholder="con"/>
+                                    </Col>
+                                    <Col md={2}>
+                                    <Label id="attCha">Charisma</Label> 
+                                    <Input type="number" id="charisma" name="cha" placeholder="cha"/>
+                                    </Col>
+                                    <Col md={2}>
+                                    <Label id="attWis">Wisdom</Label> 
+                                    <Input type="number" id="wisdom" name="wis" placeholder="wis"/>
+                                    </Col>
+                                    <Col md={2}>
+                                    <Label id="attInt">Intelligence</Label> 
+                                    <Input type="number" id="intelligence" name="int" placeholder="int"/>
+                                    </Col>
+                                    </Row>
+                                    </FormGroup>
+                            </div>
+                        </Form>
+                    </div>
+                </div>
+                </div>
+
+        )
+    }
+
     renderSelectedRace(index){
 
         console.log(index)
@@ -60,7 +153,7 @@ class CharacterBuilder extends Component {
 
 
         return(
-            <Card key={classcard.id} className="col col-md-7">
+            <Card key={classcard.id} className="row" className="col col-md-7">
                 <Tabs defaultActiveKey="image" id="race-tabs">
                     <Tab eventKey="image" title={classcard.name} className='cardheader'>
                         <Image fluid src={classcard.image} alt={classcard.name}/>
@@ -72,65 +165,6 @@ class CharacterBuilder extends Component {
             </Card>
         )
     }
-
-    render() {
-
-        return (
-            <div className='container'>
-                <div className='row pagetitle'>
-                    <p>Create Your Own Character</p>
-                </div>
-                <div className='row'>
-                    <div className='col-sm-5'>
-                        <div className='row'>
-                            {this.renderSelectedRace(this.state.displayedRaceIndex)}
-                        </div>
-                        <div className='row'>
-                            {this.renderSelectedClass(this.state.displayedClassIndex)}
-                        </div>
-                    </div>
-                    <div className='col-sm-7'>
-                        <Form>
-                            <InputGroup>
-                                <FormLabel id="racetype">Race</FormLabel>
-                                <FormSelect onChange={this.updateSelectedRace}>
-                                    <option>Select A Race</option>                                    
-                                    <option value='0'>Dragonborn</option>
-                                    <option value='1'>Dwarf</option>
-                                    <option value='2'>Elf</option>
-                                    <option value='3'>Gnome</option>
-                                    <option value='4'>Half-Elf</option>
-                                    <option value='5'>Halfling</option>
-                                    <option value='6'>Half-Orc</option>
-                                    <option value='7'>Human</option>
-                                    <option value='8'>Tiefling</option>
-                                </FormSelect>
-                            </InputGroup>
-                            <InputGroup>
-                                <FormLabel id="classtype">Class</FormLabel>
-                                <FormSelect onChange={this.updateSelectedClass}>
-                                    <option>Select a Class</option>
-                                    <option value='0'>Barbarian</option>
-                                    <option value='1'>Bard</option>
-                                    <option value='2'>Cleric</option>
-                                    <option value='3'>Druid</option>
-                                    <option value='4'>Fighter</option>
-                                    <option value='5'>Monk</option>
-                                    <option value='6'>Paladin</option>
-                                    <option value='7'>Ranger</option>
-                                    <option value='8'>Sorcerer</option>                                   
-                                    <option value='9'>Warlock</option>
-                                    <option value='10'>Wizard</option>
-                                </FormSelect>
-                            </InputGroup>
-                        </Form>
-                    </div>
-                </div>
-                </div>
-
-        )
-    }
-
 }
 
 export default CharacterBuilder
