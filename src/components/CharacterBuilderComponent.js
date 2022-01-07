@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Form, InputGroup, FormSelect, FormLabel, Image, Card, Tabs, Tab } from 'react-bootstrap';
-import {Input, Label, FormGroup, Col, Row } from 'reactstrap';
+import { Form, Image, Card, Tabs, Tab } from 'react-bootstrap';
+import {Input, Label, FormGroup, Col, Row, Modal, ModalBody, ModalHeader, Button } from 'reactstrap';
 import { RACES } from '../shared/RacesList';
 import { CLASSLIST } from '../shared/ClassesList';
 
@@ -13,11 +13,35 @@ class CharacterBuilder extends Component {
         this.state = {
             races: RACES,
             classlist: CLASSLIST,
-            displayedRaceIndex: '0',
-            displayedClassIndex: '0'
+            displayedRaceIndex: '',
+            displayedClassIndex: '',
+            isAbilityModalOpen: false,
+            isNameModalOpen: false,
+            advancedOptions: true
+
         }
         this.updateSelectedRace = this.updateSelectedRace.bind(this)
         this.updateSelectedClass = this.updateSelectedClass.bind(this)
+        this.toggleAbilityModal = this.toggleAbilityModal.bind(this)
+        this.toggleNameModal = this.toggleNameModal.bind(this)
+    }
+
+    toggleAbilityModal() {
+        this.setState({
+            isAbilityModalOpen: !this.state.isAbilityModalOpen
+        });
+    }
+
+    toggleNameModal() {
+        this.setState({
+            isNameModalOpen: !this.state.isNameModalOpen
+        });
+    }
+    
+    toggleAdvancedOptions() {
+        this.setState({
+            advancedOptions: !this.state.advancedOptions
+        });
     }
 
     updateSelectedRace(selected){
@@ -42,85 +66,128 @@ class CharacterBuilder extends Component {
                 <div className='row'>
                     <div align="center" className='row'>
                         <Form>
+                            <div className="col-sm-3">
+                                <FormGroup>
+                                        <div className="col-md-6">
+                                        <Label id="characterName">Name</Label>
+                                        <Button size="sm" outline="true" onClick={this.toggleNameModal}><i className="fa fa-question" /></Button>
+                                        {this.renderNameModal()}
+                                        </div>
+                                    <Row>
+                                        <Input type="text" placeholder="Character Name"></Input>
+                                    </Row>
+                                
+                                </FormGroup>
+                            </div>
                             <div className="col-sm-3">    
-                            <FormGroup>
-                                <Label id="racetype">Race</Label>
-                                <Input type="select" onChange={this.updateSelectedRace}>
-                                    <option>Select A Race</option>                                    
-                                    <option value='0'>Dragonborn</option>
-                                    <option value='1'>Dwarf</option>
-                                    <option value='2'>Elf</option>
-                                    <option value='3'>Gnome</option>
-                                    <option value='4'>Half-Elf</option>
-                                    <option value='5'>Halfling</option>
-                                    <option value='6'>Half-Orc</option>
-                                    <option value='7'>Human</option>
-                                    <option value='8'>Tiefling</option>
-                                </Input>
-                            </FormGroup>
+                                <FormGroup>
+                                    <Label id="raceType">Race</Label>
+                                    <Input type="select" onChange={this.updateSelectedRace}>
+                                        <option value=''>Select A Race</option>                                    
+                                        <option value='0'>Dragonborn</option>
+                                        <option value='1'>Dwarf</option>
+                                        <option value='2'>Elf</option>
+                                        <option value='3'>Gnome</option>
+                                        <option value='4'>Half-Elf</option>
+                                        <option value='5'>Halfling</option>
+                                        <option value='6'>Half-Orc</option>
+                                        <option value='7'>Human</option>
+                                        <option value='8'>Tiefling</option>
+                                    </Input>
+                                </FormGroup>
                             </div>
                             <div className='col-sm-6'>
                                     {this.renderSelectedRace(this.state.displayedRaceIndex)}
                             </div>
                             <div className="col-sm-3">
-                            <FormGroup>
-                                <Label id="classtype">Class</Label>
-                                <Input type="select" onChange={this.updateSelectedClass}>
-                                    <option>Select a Class</option>
-                                    <option value='0'>Barbarian</option>
-                                    <option value='1'>Bard</option>
-                                    <option value='2'>Cleric</option>
-                                    <option value='3'>Druid</option>
-                                    <option value='4'>Fighter</option>
-                                    <option value='5'>Monk</option>
-                                    <option value='6'>Paladin</option>
-                                    <option value='7'>Ranger</option>
-                                    <option value='8'>Sorcerer</option>                                   
-                                    <option value='9'>Warlock</option>
-                                    <option value='10'>Wizard</option>
-                                </Input>
-                            </FormGroup>
+                                <FormGroup>
+                                    <Label id="classType">Class</Label>
+                                    <Input type="select" onChange={this.updateSelectedClass}>
+                                        <option value=''>Select a Class</option>
+                                        <option value='0'>Barbarian</option>
+                                        <option value='1'>Bard</option>
+                                        <option value='2'>Cleric</option>
+                                        <option value='3'>Druid</option>
+                                        <option value='4'>Fighter</option>
+                                        <option value='5'>Monk</option>
+                                        <option value='6'>Paladin</option>
+                                        <option value='7'>Ranger</option>
+                                        <option value='8'>Sorcerer</option>                                   
+                                        <option value='9'>Warlock</option>
+                                        <option value='10'>Wizard</option>
+                                    </Input>
+                                </FormGroup>
                             </div>
                             <div className='col-sm-6'>
-                                    {this.renderSelectedClass(this.state.displayedClassIndex)}
+                                {this.renderSelectedClass(this.state.displayedClassIndex)}
                             </div>
                             <div className="col-sm-3 col-md-5">
-                            <Label id="Attributes">Attributes</Label>
-                                    <FormGroup>
+                                <Label id="AbilityScores" onClick={this.toggleAbilityModal}>Ability Scores</Label>
+                                {this.renderAbilityModal()}
+                                <Button size="sm" outline="true" onClick={this.toggleAbilityModal}><i className="fa fa-question" /></Button>
+                                <FormGroup>
                                     <Row>
-                                    <Col md={2}>
-                                    <Label id="attStr">Strength</Label>
-                                    <Input type="number" id="strength" name="str" placeholder="str"/>
-                                    </Col>
-                                    <Col md={2}>
-                                    <Label id="attDex">Dexterity</Label>    
-                                    <Input type="number" id="dexterity" name="dex" placeholder="dex"/>
-                                    </Col>
-                                    
-                                    <Col md={2}>
-                                    <Label id="attCon">Constitution</Label> 
-                                    <Input type="number" id="constitution" name="con" placeholder="con"/>
-                                    </Col>
-                                    <Col md={2}>
-                                    <Label id="attCha">Charisma</Label> 
-                                    <Input type="number" id="charisma" name="cha" placeholder="cha"/>
-                                    </Col>
-                                    <Col md={2}>
-                                    <Label id="attWis">Wisdom</Label> 
-                                    <Input type="number" id="wisdom" name="wis" placeholder="wis"/>
-                                    </Col>
-                                    <Col md={2}>
-                                    <Label id="attInt">Intelligence</Label> 
-                                    <Input type="number" id="intelligence" name="int" placeholder="int"/>
-                                    </Col>
+                                        <Col md={2}>
+                                            <Label id="attStr">Strength</Label>
+                                            <Input type="number" id="strength" name="str" placeholder="str"/>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Label id="attDex">Dexterity</Label>    
+                                            <Input type="number" id="dexterity" name="dex" placeholder="dex"/>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Label id="attCon">Constitution</Label> 
+                                            <Input type="number" id="constitution" name="con" placeholder="con"/>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Label id="attCha">Charisma</Label> 
+                                            <Input type="number" id="charisma" name="cha" placeholder="cha"/>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Label id="attWis">Wisdom</Label> 
+                                            <Input type="number" id="wisdom" name="wis" placeholder="wis"/>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Label id="attInt">Intelligence</Label> 
+                                            <Input type="number" id="intelligence" name="int" placeholder="int"/>
+                                        </Col>
                                     </Row>
-                                    </FormGroup>
+                                </FormGroup>
                             </div>
+                            <FormGroup>
+                                <Button outline="true" onClick={this.toggleAdvancedOptions}>More</Button>
+                            </FormGroup>
+                            {this.renderAdvancedOptions()}
                         </Form>
                     </div>
                 </div>
                 </div>
 
+        )
+    }
+
+    renderAbilityModal(){
+        return (
+            <Modal isOpen={this.state.isAbilityModalOpen} toggle={this.toggleAbilityModal}>
+                <ModalHeader toggle={this.toggleAbilityModal}> Ability Score Info </ModalHeader>
+                <ModalBody>Ability Scores are the base statistics that affect your character's chances of acheiving outcomes from rolls. <br/>
+                They can range from a minimum of 0 to a maximum of 20, and can be calculated in one of 3 main ways: Point Buy, Standard Array, or rolled manually.<br/>
+                Ability scores affect your rolls with certain abilities. A base score of 10 will have no effect on rolls, and every +2 or -2 from 10 will give you a +1 or -1 to your rolls
+                in that category. For example, if you are making an athletics(strength) check and your strength score is 16 or 17, you will get a +3 to your roll. 
+                
+                </ModalBody>
+            </Modal>
+        )
+    }
+
+    renderNameModal(){
+        return (
+            <Modal isOpen={this.state.isNameModalOpen} toggle={this.toggleNameModal}>
+                <ModalHeader toggle={this.toggleNameModal}> Ability Score Info </ModalHeader>
+                <ModalBody>Choose a fantasy name for your character! Here is a reference that can help you with some inspiration:  
+                    <a href="https://www.fantasynamegenerators.com/"> fantasynamegenerators.com</a>
+                </ModalBody>
+            </Modal>
         )
     }
 
@@ -130,7 +197,7 @@ class CharacterBuilder extends Component {
         const racecard = this.state.races.filter(raceindex => raceindex.id === parseInt(index))[0]
         console.log(racecard)
 
-
+        if (this.state.displayedRaceIndex) {
         return(
             <Card key={racecard.id} className="col col-md-7 ">
                 <Tabs defaultActiveKey="image" id="race-tabs">
@@ -143,6 +210,8 @@ class CharacterBuilder extends Component {
                 </Tabs>
             </Card>
         )
+        }
+        return;
     }
 
     renderSelectedClass(index){
@@ -151,7 +220,7 @@ class CharacterBuilder extends Component {
         const classcard = this.state.classlist.filter(classindex => classindex.id === parseInt(index))[0]
         console.log(classcard)
 
-
+        if (this.state.displayedClassIndex) {
         return(
             <Card key={classcard.id} className="row" className="col col-md-7">
                 <Tabs defaultActiveKey="image" id="race-tabs">
@@ -164,7 +233,52 @@ class CharacterBuilder extends Component {
                 </Tabs>
             </Card>
         )
+        }
+        return;
+    }
+
+
+    renderAdvancedOptions() {
+        if (this.state.advancedOptions) {
+            return (
+                <div className="col-sm-3"> 
+                    <FormGroup>
+                        <Label id="Language">Language</Label>
+                        <Input type="select">
+                            <option>Select a Language</option>
+                            <option>Abyssal</option>
+                            <option>Celestial</option>
+                            <option>Daelkyr</option>
+                            <option>Deep Speech</option>
+                            <option>Draconic</option>
+                            <option>Dwarvish</option>
+                            <option>Giant</option>
+                            <option>Gith</option>
+                            <option>Gnomish</option>                                   
+                            <option>Goblin</option>
+                            <option>Halfling</option>
+                            <option>Infernal</option>
+                            <option>Kraul</option>
+                            <option>Leonin</option>
+                            <option>Loxodon</option>
+                            <option>Marquesian</option>
+                            <option>Minotaur</option>
+                            <option>Naush</option>
+                            <option>Orc</option>
+                            <option>Primordial</option>
+                            <option>Quari</option>
+                            <option>Sylvan</option>
+                            <option>Undercommon</option>
+                            <option>Vedalken</option>
+                            <option>Zemnian</option>
+                        </Input>
+                    </FormGroup>
+                </div>
+            );
+        }
+        else {
+            return;
+        }
     }
 }
-
 export default CharacterBuilder
