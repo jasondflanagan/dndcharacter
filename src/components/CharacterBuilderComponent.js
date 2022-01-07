@@ -17,7 +17,7 @@ class CharacterBuilder extends Component {
             displayedClassIndex: '',
             isAbilityModalOpen: false,
             isNameModalOpen: false,
-            advancedOptions: true
+            advancedOptions: false
 
         }
         this.updateSelectedRace = this.updateSelectedRace.bind(this)
@@ -243,6 +243,7 @@ class CharacterBuilder extends Component {
     renderAdvancedOptions() {
         if (this.state.advancedOptions) {
             return (
+                <>
                 <div className="col-sm-3"> 
                     <FormGroup>
                         <Label id="Language">Language</Label>
@@ -274,8 +275,37 @@ class CharacterBuilder extends Component {
                             <option>Vedalken</option>
                             <option>Zemnian</option>
                         </Input>
+                        <Label>Alignment</Label>
+                        <Input type="select">
+                            <option>Select Alignment</option>
+                            <option>Lawful Good</option>
+                            <option>Neutral Good</option>
+                            <option>Chaotic Good</option>
+                            <option>Lawful Neutral</option>
+                            <option>Neutral</option>
+                            <option>Chaotic Neutral</option>
+                            <option>Lawful Evil</option>
+                            <option>Neutral Evil</option>
+                            <option>Chaotic Evil</option>
+                        </Input>
+                        <Label>Faith</Label>
+                        <Input type="text" placeholder="Faith"></Input>
                     </FormGroup>
                 </div>
+                <div className="col-sm-7">
+                    <FormGroup>
+                        <Label id="background">Background</Label>
+                        <Input type="textarea" placeholder="Where did your character come from?"></Input>
+                        <Label id="equipment">Equipment</Label>
+                        <Input type="textarea" placeholder="List your equipment"></Input>
+                        <Label id="physicalCharacteristics">Physical Characteristics</Label>
+                        <Input type="textarea" placeholder="Describe your character's appearance?"></Input>
+                        <Label id="Backstory">Backstory</Label>
+                        <Input type="textarea" placeholder="What is your backstory?"></Input>
+                    </FormGroup>
+                </div>
+            </>
+                
             );
         }
         else {
