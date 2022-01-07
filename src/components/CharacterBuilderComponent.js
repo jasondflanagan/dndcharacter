@@ -60,6 +60,7 @@ class CharacterBuilder extends Component {
     render() {
 
         return (
+            <div style={{ backgroundImage: 'url(assets/parchment2.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
             <div className='container'>
                 <div className='row pagetitle'>
                     <p>Create Your Character</p>
@@ -156,14 +157,14 @@ class CharacterBuilder extends Component {
                                 </FormGroup>
                             </div>
                             <FormGroup>
-                                <Button outline="true" onClick={this.toggleAdvancedOptions}>More</Button>
+                                <Button color="light" onClick={this.toggleAdvancedOptions}>More</Button>
                             </FormGroup>
                             {this.renderAdvancedOptions()}
                         </Form>
                     </div>
                 </div>
                 </div>
-
+                </div>
         )
     }
 
