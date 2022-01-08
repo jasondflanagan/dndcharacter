@@ -34,13 +34,15 @@ class ClassesPage extends Component {
         });
 
         return (
-            <div className="container" style={{backgroundImage: 'url(assets/parchment2.jpg)', marginLeft:0, marginRight:0, paddingRight: 0,display: 'inline-block', width: 'fit-content', backgroundSize: 'contain', backgroundRepeat: 'repeat'}}>
+            <div style={{backgroundImage: 'url(assets/parchment2.jpg)', backgroundSize: 'contain', backgroundRepeat: 'repeat'}}>
+            <div className="container">
             <div className='row pagetitle'>
                     <p>Explore Available Classes</p>
                 </div>
                 <div className="row">
                     {classeslist}
                 </div>
+            </div>
             </div>
         );
     }
