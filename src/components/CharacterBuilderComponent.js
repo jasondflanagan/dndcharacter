@@ -72,7 +72,7 @@ class CharacterBuilder extends Component {
                                 <FormGroup>
                                         <div className="col-md-6">
                                         <Label id="characterName">Name</Label>
-                                        <Button size="sm" outline="true" onClick={this.toggleNameModal}><i className="fa fa-question" /></Button>
+                                        <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleNameModal}><i className="fa fa-question" /></Button>
                                         {this.renderNameModal()}
                                         </div>
                                     <Row>
@@ -126,7 +126,7 @@ class CharacterBuilder extends Component {
                             <div className="col-sm-3 col-md-5">
                                 <Label id="AbilityScores" onClick={this.toggleAbilityModal}>Ability Scores</Label>
                                 {this.renderAbilityModal()}
-                                <Button size="sm" outline="true" onClick={this.toggleAbilityModal}><i className="fa fa-question" /></Button>
+                                <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleAbilityModal}><i className="fa fa-question" /></Button>
                                 <FormGroup>
                                     <Row>
                                         <Col md={2}>
@@ -157,7 +157,7 @@ class CharacterBuilder extends Component {
                                 </FormGroup>
                             </div>
                             <FormGroup>
-                                <Button color="light" onClick={this.toggleAdvancedOptions}>More</Button>
+                                <Button style={{margin: 10}} color="light" onClick={this.toggleAdvancedOptions}>Advanced Options</Button>
                             </FormGroup>
                             {this.renderAdvancedOptions()}
                         </Form>
