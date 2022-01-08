@@ -18,7 +18,8 @@
 .nav-item{
     font-family: 'MedievalSharp', cursive;
     font-size: 1.5em;
-    color: black;
+    color: #eeec91;
+
 }
 
 .tab-content{
@@ -31,7 +32,20 @@ h1{
     font-family: 'MedievalSharp', cursive;
 }
 
+h5{
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.5rem;
+}
+
 .site-footer{
     font-family: 'MedievalSharp', cursive;
     font-size: 1.20em;
+}
+
+.card-title{
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.5rem;
+    color: black;
+    background-color: #ffffff;
+    text-align: center;
 }

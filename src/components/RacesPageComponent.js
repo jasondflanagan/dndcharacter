@@ -15,11 +15,12 @@ class RacesPage extends Component {
         const raceslist = this.state.races.map(race => {
             return (
                 <Card key={race.id} className="col-sm-4">
+                    <Card.Title>{race.name}</Card.Title>
                     <Tabs defaultActiveKey="image" id="race-tabs">
-                        <Tab eventKey="image" title={race.name} className='cardheader'>
+                        <Tab eventKey="image" title='Image'>
                             <Image fluid src={race.image} alt={race.name}/>
                         </Tab>
-                        <Tab eventKey="facts" title="Facts" className='cardheader'>
+                        <Tab eventKey="facts" title="Facts">
                             {race.main}
                         </Tab>
                     </Tabs>
