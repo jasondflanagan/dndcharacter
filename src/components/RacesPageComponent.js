@@ -14,7 +14,7 @@ class RacesPage extends Component {
     render() {
         const raceslist = this.state.races.map(race => {
             return (
-                <Card key={race.id} className="col-sm-4">
+                <Card key={race.id} className="col-sm-5 m-3">
                     <Card.Title>{race.name}</Card.Title>
                     <Tabs defaultActiveKey="image" id="race-tabs">
                         <Tab eventKey="image" title='Image'>
@@ -35,7 +35,7 @@ class RacesPage extends Component {
         });
 
         return (
-            <div className="container">
+            <div className="container" style={{backgroundImage: 'url(assets/parchment2.jpg)', marginLeft:0, marginRight:0, display: 'inline-block', width: 'fit-content', backgroundSize: 'contain', backgroundRepeat: 'repeat'}}>
                 <div className='row pagetitle'>
                     <p>Explore Available Races</p>
                 </div>
