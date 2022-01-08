@@ -230,7 +230,7 @@ class CharacterBuilder extends Component {
 
         if (this.state.displayedClassIndex) {
         return(
-            <Card key={classcard.id} className="row" className="col col-md-7">
+            <Card style={{ borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }} key={classcard.id} className="row" className="col col-md-7">
                 <Tabs defaultActiveKey="imagetab" id="race-tabs">
                     <Tab eventKey="imagetab" title={classcard.name} className='cardheader'>
                         <Image fluid src={classcard.imagetab} alt={classcard.name}/>

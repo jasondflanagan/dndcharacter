@@ -2,7 +2,7 @@ export const RACES = [
     {
         id: 0,
         name: "Dragonborn",
-        image: "/assets/DND-Dragonborn-Race.jpg_large",
+        image: "/assets/DND-Dragonborn-Race.png",
         tab1title: "Main",
         tab1text: "Born of dragons, as their name proclaims, the dragonborn walk proudly through a world that greets them with fearful incomprehension. Shaped by draconic gods or the dragons themselves, dragonborn originally hatched from dragon eggs as a unique race, combining the best attributes of dragons and humanoids. Some dragonborn are faithful servants to true dragons, others form the ranks of soldiers in great wars, and still others find themselves adrift, with no clear calling in life.",
         tab2title: "Proud Dragon Kin",
@@ -35,7 +35,7 @@ export const RACES = [
     {
         id: 3,
         name: "Gnome",
-        image: "/assets/DND-Gnome-Race.jpg",
+        image: "/assets/DND-Gnome-Race.png",
         tab1title: "Main",
         tab1text: "A constant hum of busy activity pervades the warrens and neighborhoods where gnomes form their close-knit communities. Louder sounds punctuate the hum: a crunch of grinding gears here, a minor explosion there, a yelp of surprise or triumph, and especially bursts of laughter. Gnomes take delight in life, enjoying every moment of invention, exploration, investigation, creation, and play.",
         tab2title: "Vibrant Expression",
@@ -57,7 +57,7 @@ export const RACES = [
     {
         id: 5,
         name: "Halfling",
-        image: "/assets/DND-Halfling-Race.jpg",
+        image: "/assets/DND-Halfling-Race.png",
         tab1title: "Main",
         tab1text: "The comforts of home are the goals of most halflings' lives: a place to settle in peace and quiet, far from marauding monsters and clashing armies; a blazing fire and a generous meal; fine drink and fine conversation. Though some halflings live out their days in remote agricultural communities, others form nomadic bands that travel constantly, lured by the open road and the wide horizon to discover the wonders of new lands and peoples. But even these wanderers love peace, food, hearth, and home, though home might be a wagon jostling along a dirt road or a raft floating downriver.",
         tab2title: "Small & Practical",
@@ -68,7 +68,7 @@ export const RACES = [
     {
         id: 6,
         name: "Half-Orc",
-        image: "/assets/DND-Half-Orc-Race.jpg",
+        image: "/assets/DND-Half-Orc-Race.png",
         tab1title: "Main",
         tab1text: "Whether united under the leadership of a mighty warlock or having fought to a standstill after years of conflict, orc and human tribes sometimes form alliances, joining forces into a larger horde to the terror of civilized lands nearby. When these alliances are sealed by marriages, half-orcs are born. Some half-orcs rise to become proud chiefs of orc tribes, their human blood giving them an edge over their full-blooded orc rivals. Some venture into the world to prove their worth among humans and other more civilized races. &gt;Many of these become adventurers, achieving greatness for their mighty deeds and notoriety for their barbaric customs and savage fury.",
         tab2title: "Scarred & Strong",
@@ -79,7 +79,7 @@ export const RACES = [
     {
         id: 7,
         name: "Human",
-        image: "/assets/DND-Human-Race.jpg",
+        image: "/assets/DND-Human-Race.png",
         tab1title: "Main",
         tab1text: "In the reckonings of most worlds, humans are the youngest of the common races, late to arrive on the world scene and short-lived in comparison to dwarves, elves, and dragons. Perhaps it is because of their shorter lives that they strive to achieve as much as they can in the years they are given. Or maybe they feel they have something to prove to the elder races, and that's why they build their mighty empires on the foundation of conquest and trade. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.",
         tab2title: "A Broad Spectrum",
@@ -90,7 +90,7 @@ export const RACES = [
     {
         id: 8,
         name: "Tiefling",
-        image: "/assets/Mollymauk_Official_byArianaOrner.png",
+        image: "/assets/DND-Tiefling-Race.png",
         tab1title: "Main",
         tab1text: "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling. And to twist the knife, tieflings know that this is because a pact struck generations ago infused the essence of Asmodeus—overlord of the Nine Hells—intotheir bloodline. Their appearance and their nature are not their fault but the result of an ancient sin, for which they and their children and their children's children will always be held accountable.",
         tab2title: "Infernal Bloodline",

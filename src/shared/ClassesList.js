@@ -2,7 +2,7 @@ export const CLASSLIST = [
     {
         id: 0,
         name: "Barbarian",
-        imagetab: "/assets/DND-Barbarian-Class.jpg",
+        imagetab: "/assets/DND-Barbarian-Class.png",
         tab1title: "Main",
         tab1text: "Barbarians are defined by their rage: unbridled, unquenchable, and unthinking fury. More than a mere emotion, their anger is the ferocity of a cornered predator, the unrelenting assault of a storm, the churning turmoil of the sea. For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.",
         tab2title: "Primal Instinct",
@@ -12,7 +12,7 @@ export const CLASSLIST = [
     },    {
         id: 1,
         name: "Bard",
-        imagetab: "/assets/DND-Bard-Class.jpg",
+        imagetab: "/assets/DND-Bard-Class.png",
         tab1title: "Main",
         tab1text: "Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds.",
         tab2title: "Music and Magic",
@@ -22,7 +22,7 @@ export const CLASSLIST = [
     },    {
         id: 2,
         name: "Cleric",
-        imagetab: "/assets/DND-Cleric-Class.jpg",
+        imagetab: "/assets/DND-Cleric-Class.png",
         tab1title: "Main",
         tab1text: "Clerics are intermediaries between the mortal world and the distant planes of the gods. As varied as the gods they serve, clerics strive to embody the handiwork of their deities. No ordinary priest, a cleric is imbued with divine magic.",
         tab2title: "Healers and Warriors",
@@ -32,7 +32,7 @@ export const CLASSLIST = [
     },    {
         id: 3,
         name: "Druid",
-        imagetab: "/assets/DND-Druid-Class.jpg",
+        imagetab: "/assets/DND-Druid-Class.png",
         tab1title: "YMain",
         tab1text: "Whether calling on the elemental forces of nature or emulating the creatures of the animal world, druids are an embodiment of nature’s resilience, cunning, and fury. They claim no mastery over nature. Instead, they see themselves as extensions of nature’s indomitable will.",
         tab2title: "Power of Nature",
@@ -52,7 +52,7 @@ export const CLASSLIST = [
     },    {
         id: 5,
         name: "Monk",
-        imagetab: "/assets/DND-Monk-Class.jpg",
+        imagetab: "/assets/DND-Monk-Class.png",
         tab1text: "Whatever their discipline, monks are united in their ability to magically harness the energy that flows in their bodies. Whether channeled as a striking display of combat prowess or a subtler focus of defensive ability and speed, this energy infuses all that a monk does.",
         tab2title: "The Magic of Ki",
         tab2text: "Monks make careful study of a magical energy that most monastic traditions call ki. This energy is an element of the magic that suffuses the multiverse—specifically, the element that flows through living bodies. Monks harness this power within themselves to create magical effects and exceed their bodies’ physical capabilities, and some of their special attacks can hinder the flow of ki in their opponents. Using this energy, monks channel uncanny speed and strength into their unarmed strikes. As they gain experience, their martial training and their mastery of ki gives them more power over their bodies and the bodies of their foes.",
@@ -62,7 +62,7 @@ export const CLASSLIST = [
         id: 6,
         name: "Paladin",
         tab1title: "Main",
-        imagetab: "/assets/DND-Paladin-Class.jpg",
+        imagetab: "/assets/DND-Paladin-Class.png",
         tab1text: "Whatever their origin and their mission, paladins are united by their oaths to stand against the forces of evil. Whether sworn before a god’s altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin’s oath is a powerful bond. It is a source of power that turns a devout warrior into a blessed champion.",
         tab2title: "The Cause of Righteousness",
         tab2text: "A paladin swears to uphold justice and righteousness, to stand with the good things of the world against the encroaching darkness, and to hunt the forces of evil wherever they lurk. Different paladins focus on various aspects of the cause of righteousness, but all are bound by the oaths that grant them power to do their sacred work. Although many paladins are devoted to gods of good, a paladin’s power comes as much from a commitment to justice itself as it does from a god. Paladins train for years to learn the skills of combat, mastering a variety of weapons and armor. Even so, their martial skills are secondary to the magical power they wield: power to heal the sick and injured, to smite the wicked and the undead, and to protect the innocent and those who join them in the fight for justice.",
@@ -71,7 +71,7 @@ export const CLASSLIST = [
     },    {
         id: 7,
         name: "Ranger",
-        imagetab: "/assets/DND-Ranger-Class.jpg",
+        imagetab: "/assets/DND-Ranger-Class.png",
         tab1title: "Main",
         tab1text: "Far from the bustle of cities and towns, past the hedges that shelter the most distant farms from the terrors of the wild, amid the dense-packed trees of trackless forests and across wide and empty plains, rangers keep their unending watch.",
         tab2title: "Deadly Hunters",
@@ -81,7 +81,7 @@ export const CLASSLIST = [
     },    {
         id: 8,
         name: "Sorcerer",
-        imagetab: "/assets/DND-Sorcerer-Class.jpg",
+        imagetab: "/assets/DND-Sorcerer-Class.png",
         tab1title: "Main",
         tab1text: "Sorcerers carry a magical birthright conferred upon them by an exotic bloodline, some otherworldly influence, or exposure to unknown cosmic forces. One can’t study sorcery as one learns a language, any more than one can learn to live a legendary life. No one chooses sorcery; the power chooses the sorcerer.",
         tab2title: "Raw Magic",
@@ -89,9 +89,9 @@ export const CLASSLIST = [
         tab3title: "Unexplained Powers",
         tab3text: "Sorcerers are rare in the world, and it’s unusual to find a sorcerer who is not involved in the adventuring life in some way. People with magical power seething in their veins soon discover that the power doesn’t like to stay quiet. A sorcerer’s magic wants to be wielded, and it has a tendency to spill out in unpredictable ways if it isn’t called on. Sorcerers often have obscure or quixotic motivations driving them to adventure. Some seek a greater understanding of the magical force that infuses them, or the answer to the mystery of its origin. Others hope to find a way to get rid of it, or to unleash its full potential. Whatever their goals, sorcerers are every bit as useful to an adventuring party as wizards, making up for a comparative lack of breadth in their magical knowledge with enormous flexibility in using the spells they know."
     },    {
-        id: 9,
+        id: 10,
         name: "Wizard",
-        imagetab: "/assets/DND-Wizard-Class.jpg",
+        imagetab: "/assets/DND-Wizard-Class.png",
         tab1title: "Main",
         tab1text: "Wizards are supreme magic-users, defined and united as a class by the spells they cast. Drawing on the subtle weave of magic that permeates the cosmos, wizards cast spells of explosive fire, arcing lightning, subtle deception, and brute-force mind control. Their magic conjures monsters from other planes of existence, glimpses the future, or turns slain foes into zombies. Their mightiest spells change one substance into another, call meteors down from the sky, or open portals to other worlds.",
         tab2title: "Scholars of the Arcane",
@@ -99,9 +99,9 @@ export const CLASSLIST = [
         tab3title: "The Lure of Knowledge",
         tab3text: "Wizards’ lives are seldom mundane. The closest a wizard is likely to come to an ordinary life is working as a sage or lecturer in a library or university, teaching others the secrets of the multiverse. Other wizards sell their services as diviners, serve in military forces, or pursue lives of crime or domination. But the lure of knowledge and power calls even the most unadventurous wizards out of the safety of their libraries and laboratories and into crumbling ruins and lost cities. Most wizards believe that their counterparts in ancient civilizations knew secrets of magic that have been lost to the ages, and discovering those secrets could unlock the path to a power greater than any magic available in the present age."
     },    {
-        id: 10,
+        id: 9,
         name: "Warlock",
-        imagetab: "/assets/DND-Warlock-Class.jpg",
+        imagetab: "/assets/DND-Warlock-Class.png",
         tab1title: "Main",
         tab1text: "Warlocks are seekers of the knowledge that lies hidden in the fabric of the multiverse. Through pacts made with mysterious beings of supernatural power, warlocks unlock magical effects both subtle and spectacular. Drawing on the ancient knowledge of beings such as fey nobles, demons, devils, hags, and alien entities of the Far Realm, warlocks piece together arcane secrets to bolster their own power.",
         tab2title: "Sworn & Beholden",
@@ -109,7 +109,7 @@ export const CLASSLIST = [
         tab3title: "Delvers into Secrets",
         tab3text: "Warlocks are driven by an insatiable need for knowledge and power, which compels them into their pacts and shapes their lives. This thirst drives warlocks into their pacts and shapes their later careers as well. Stories of warlocks binding themselves to fiends are widely known. But many warlocks serve patrons that are not fiendish. Sometimes a traveler in the wilds comes to a strangely beautiful tower, meets its fey lord or lady, and stumbles into a pact without being fully aware of it. And sometimes, while poring over tomes of forbidden lore, a brilliant but crazed student’s mind is opened to realities beyond the material world and to the alien beings that dwell in the outer void. Once a pact is made, a warlock’s thirst for knowledge and power can’t be slaked with mere study and research. No one makes a pact with such a mighty patron if he or she doesn’t intend to use the power thus gained. Rather, the vast majority of warlocks spend their days in active pursuit of their goals, which typically means some kind of adventuring. Furthermore, the demands of their patrons drive warlocks toward adventure."
     },  {
-        id: 1,
+        id: 11,
         name: "Rogue",
         imagetab: "/assets/DND-Rogue-Class.png",
         tab1title: "Main",
