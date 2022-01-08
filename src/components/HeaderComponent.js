@@ -23,7 +23,7 @@ class Header extends Component {
                     <div className="container">
                         <div className="row">
                                 <Collapse isOpen={this.state.isNavOpen} navbar>
-                                    <Nav navbar>
+                                    <Nav navbar style={{align: 'center', marginLeft: '7em'}}>
                                         <NavItem >
                                             <NavLink className="nav-link" style={{fontSize: "1.4em", color: "#eeec91"}} to="/home">
                                                 <i className="fa fa-university fa-lg" /> Home
