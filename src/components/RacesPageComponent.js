@@ -20,8 +20,14 @@ class RacesPage extends Component {
                         <Tab eventKey="image" title='Image'>
                             <Image fluid src={race.image} alt={race.name}/>
                         </Tab>
-                        <Tab eventKey="facts" title="Facts">
-                            {race.main}
+                        <Tab eventKey="tab1title" title={race.tab1title}>
+                            {race.tab1text}
+                        </Tab>
+                        <Tab eventKey="tab2title" title={race.tab2title}>
+                            {race.tab2text}
+                        </Tab>
+                        <Tab eventKey="tab3title" title={race.tab3title}>
+                            {race.tab3text}
                         </Tab>
                     </Tabs>
                 </Card>
