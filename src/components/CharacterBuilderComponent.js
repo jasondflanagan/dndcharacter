@@ -201,13 +201,19 @@ class CharacterBuilder extends Component {
 
         if (this.state.displayedRaceIndex) {
         return(
-            <Card key={racecard.id} className="col col-md-7 ">
+            <Card style={{ borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }} key={racecard.id} className="col col-md-7 ">
                 <Tabs defaultActiveKey="image" id="race-tabs">
                     <Tab eventKey="image" title={racecard.name} className='cardheader'>
                         <Image fluid src={racecard.image} alt={racecard.name}/>
                     </Tab>
-                    <Tab eventKey="facts" title="Facts" className='cardheader'>
-                        {racecard.main}
+                    <Tab eventKey="tab1title" title={racecard.tab1title} className='cardheader'>
+                        {racecard.tab1text}
+                    </Tab>
+                    <Tab eventKey="tab2title" title={racecard.tab2title} className='cardheader'>
+                        {racecard.tab2text}
+                    </Tab>
+                    <Tab eventKey="tab3title" title={racecard.tab3title} className='cardheader'>
+                        {racecard.tab3text}
                     </Tab>
                 </Tabs>
             </Card>
@@ -225,12 +231,18 @@ class CharacterBuilder extends Component {
         if (this.state.displayedClassIndex) {
         return(
             <Card key={classcard.id} className="row" className="col col-md-7">
-                <Tabs defaultActiveKey="image" id="race-tabs">
-                    <Tab eventKey="image" title={classcard.name} className='cardheader'>
-                        <Image fluid src={classcard.image} alt={classcard.name}/>
+                <Tabs defaultActiveKey="imagetab" id="race-tabs">
+                    <Tab eventKey="imagetab" title={classcard.name} className='cardheader'>
+                        <Image fluid src={classcard.imagetab} alt={classcard.name}/>
                     </Tab>
-                    <Tab eventKey="facts" title="Facts" className='cardheader'>
-                        {classcard.main}
+                    <Tab eventKey="tab1title" title={classcard.tab1title} className='cardheader'>
+                        {classcard.tab1text}
+                    </Tab>
+                    <Tab eventKey="tab2title" title={classcard.tab2title} className='cardheader'>
+                        {classcard.tab2text}
+                    </Tab>
+                    <Tab eventKey="tab3title" title={classcard.tab3title} className='cardheader'>
+                        {classcard.tab3text}
                     </Tab>
                 </Tabs>
             </Card>
