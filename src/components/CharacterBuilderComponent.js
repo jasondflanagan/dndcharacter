@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Image, Card, Tabs, Tab } from 'react-bootstrap';
+import { Form, Image, Card, Tabs, Tab, CardImg } from 'react-bootstrap';
 import {Input, Label, FormGroup, Col, Row, Modal, ModalBody, ModalHeader, Button } from 'reactstrap';
 import { RACES } from '../shared/RacesList';
 import { CLASSLIST } from '../shared/ClassesList';
@@ -202,20 +202,7 @@ class CharacterBuilder extends Component {
         if (this.state.displayedRaceIndex) {
         return(
             <Card style={{ borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }} key={racecard.id} className="col col-md-7 ">
-                <Tabs defaultActiveKey="image" id="race-tabs">
-                    <Tab eventKey="image" title={racecard.name} className='cardheader'>
-                        <Image fluid src={racecard.image} alt={racecard.name}/>
-                    </Tab>
-                    <Tab eventKey="tab1title" title={racecard.tab1title} className='cardheader'>
-                        {racecard.tab1text}
-                    </Tab>
-                    <Tab eventKey="tab2title" title={racecard.tab2title} className='cardheader'>
-                        {racecard.tab2text}
-                    </Tab>
-                    <Tab eventKey="tab3title" title={racecard.tab3title} className='cardheader'>
-                        {racecard.tab3text}
-                    </Tab>
-                </Tabs>
+                <CardImg src={racecard.image} alt={racecard.name} />
             </Card>
         )
         }
@@ -231,20 +218,7 @@ class CharacterBuilder extends Component {
         if (this.state.displayedClassIndex) {
         return(
             <Card style={{ borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }} key={classcard.id} className="row" className="col col-md-7">
-                <Tabs defaultActiveKey="imagetab" id="race-tabs">
-                    <Tab eventKey="imagetab" title={classcard.name} className='cardheader'>
-                        <Image fluid src={classcard.imagetab} alt={classcard.name}/>
-                    </Tab>
-                    <Tab eventKey="tab1title" title={classcard.tab1title} className='cardheader'>
-                        {classcard.tab1text}
-                    </Tab>
-                    <Tab eventKey="tab2title" title={classcard.tab2title} className='cardheader'>
-                        {classcard.tab2text}
-                    </Tab>
-                    <Tab eventKey="tab3title" title={classcard.tab3title} className='cardheader'>
-                        {classcard.tab3text}
-                    </Tab>
-                </Tabs>
+                <CardImg src={classcard.imagetab} alt={classcard.name} />
             </Card>
         )
         }
