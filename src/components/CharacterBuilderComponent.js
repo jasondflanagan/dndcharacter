@@ -3,6 +3,7 @@ import { Form, Image, Card, Tabs, Tab, CardImg } from 'react-bootstrap';
 import {Input, Label, FormGroup, Col, Row, Modal, ModalBody, ModalHeader, Button } from 'reactstrap';
 import { RACES } from '../shared/RacesList';
 import { CLASSLIST } from '../shared/ClassesList';
+import { FadeTransform } from 'react-animation-components';
 
 
 
@@ -201,9 +202,15 @@ class CharacterBuilder extends Component {
 
         if (this.state.displayedRaceIndex) {
         return(
-            <Card style={{ borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }} key={racecard.id} className="col col-md-7 ">
-                <CardImg src={racecard.image} alt={racecard.name} />
-            </Card>
+            <FadeTransform
+            in
+            transformProps={{
+                exitTransform: 'scale(0.7) translateY(-20%)'
+            }}>
+                <Card style={{ borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }} key={racecard.id} className="col col-md-7 ">
+                    <CardImg src={racecard.image} alt={racecard.name} />
+                </Card>
+            </FadeTransform>
         )
         }
         return;
@@ -217,9 +224,15 @@ class CharacterBuilder extends Component {
 
         if (this.state.displayedClassIndex) {
         return(
+            <FadeTransform
+            in
+            transformProps={{
+                exitTransform: 'scale(0.7) translateY(-20%)'
+            }}>
             <Card style={{ borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }} key={classcard.id} className="row" className="col col-md-7">
                 <CardImg src={classcard.imagetab} alt={classcard.name} />
             </Card>
+            </FadeTransform>
         )
         }
         return;
