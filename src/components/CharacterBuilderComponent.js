@@ -73,7 +73,7 @@ class CharacterBuilder extends Component {
                         </div>
                         <div className='col-4'>
                         <Form>
-                                <Fade in delay="500">
+                                <Fade in delay="200">
                                     <FormGroup>
                                             <div className="col-md-6">
                                             <Label id="characterName">Name</Label>
@@ -85,7 +85,7 @@ class CharacterBuilder extends Component {
                                         </Row>
                                     </FormGroup>
                                 </Fade>
-                                <Fade in delay="700">
+                                <Fade in delay="400">
                                     <FormGroup>
                                         <Label id="raceType">Race</Label>
                                         <Input type="select" onChange={this.updateSelectedRace}>
@@ -102,7 +102,7 @@ class CharacterBuilder extends Component {
                                         </Input>
                                     </FormGroup>
                                 </Fade>
-                                <Fade in delay="900">
+                                <Fade in delay="600">
                                     <FormGroup>
                                         <Label id="classType">Class</Label>
                                         <Input type="select" onChange={this.updateSelectedClass}>
@@ -121,13 +121,13 @@ class CharacterBuilder extends Component {
                                         </Input>
                                     </FormGroup>
                                 </Fade>
-                                <Fade in delay="1100">
+                                <Fade in delay="800">
                                 <Label id="AbilityScores" onClick={this.toggleAbilityModal}>Ability Scores</Label>
                                 {this.renderAbilityModal()}
                                 <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleAbilityModal}><i className="fa fa-question" /></Button>
                                 </Fade>
                                     <FormGroup>
-                                        <Fade in delay="1300">
+                                        <Fade in delay="1000">
                                         <Row style={{marginBottom: 5}}>
                                             <Col md={4}>
                                                 <Label id="attStr">Strength</Label>
@@ -143,7 +143,7 @@ class CharacterBuilder extends Component {
                                             </Col>
                                         </Row>
                                         </Fade>
-                                        <Fade in delay="1500">
+                                        <Fade in delay="1200">
                                         <Row style={{marginBottom: 5}}>
                                             <Col md={4}>
                                                 <Label id="attCha">Charisma</Label> 
@@ -161,7 +161,7 @@ class CharacterBuilder extends Component {
                                         </Fade>
                                     </FormGroup>
                                 
-                                <Fade in delay="1700">
+                                <Fade in delay="1400">
                                     <FormGroup>
                                         <Button style={{margin: 10}} color="light" onClick={this.toggleAdvancedOptions}>Advanced Options</Button>
                                     </FormGroup>
