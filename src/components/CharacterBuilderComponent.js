@@ -119,7 +119,7 @@ class CharacterBuilder extends Component {
                                 {this.renderAbilityModal()}
                                 <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleAbilityModal}><i className="fa fa-question" /></Button>
                                 <FormGroup>
-                                    <Row style={{marginBottom: 5}}>
+                                    <Row style={{marginBottom: 10}}>
                                         <Col md={4}>
                                             <Label id="attStr">Strength</Label>
                                             <Input type="number" id="strength" name="str" placeholder="str"/>
@@ -238,8 +238,8 @@ class CharacterBuilder extends Component {
         if (this.state.advancedOptions) {
             return (
                 <>
-                <div className="col-sm-3"> 
-                    <FormGroup>
+                <div className="col" style={{marginBottom: 15}}> 
+                    <FormGroup >
                         <Label id="Language">Language</Label>
                         <Input type="select">
                             <option>Select a Language</option>
@@ -285,9 +285,7 @@ class CharacterBuilder extends Component {
                         <Label>Faith</Label>
                         <Input type="text" placeholder="Faith"></Input>
                     </FormGroup>
-                </div>
-                <div className="col-sm-7">
-                    <FormGroup>
+                    <FormGroup s>
                         <Label id="background">Background</Label>
                         <Input type="textarea" placeholder="Where did your character come from?"></Input>
                         <Label id="equipment">Equipment</Label>
