@@ -14,13 +14,13 @@ class RacesPage extends Component {
     render() {
         const raceslist = this.state.races.map(race => {
             return (
-                <Card key={race.id} className="col-sm-5 m-3" style={{backgroundColor: 'transparent', shadowOpacity: 0 }}>
+                <Card key={race.id} className="col-4" style={{borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }}>
                     <Card.Title>{race.name}</Card.Title>
-                    <Tabs defaultActiveKey="image">
-                        <Tab eventKey="image" title='Image'>
+                    <Tabs defaultActiveKey="image" style={{color: '#000000'}}>
+                        <Tab eventKey="image" title='Image' style={{color: '#000000'}}>
                             <Image fluid src={race.image} alt={race.name}/>
                         </Tab>
-                        <Tab eventKey="tab1title" title={race.tab1title}>
+                        <Tab eventKey="tab1title" title={race.tab1title} style={{color: '#000000'}}>
                             {race.tab1text}
                         </Tab>
                         <Tab eventKey="tab2title" title={race.tab2title}>

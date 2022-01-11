@@ -20,6 +20,14 @@
     font-size: .9em;
 }
 
+.nav-link.active{
+    background-color: transparent;
+}
+
+.nav-tabs{
+    background-color: transparent;
+}
+
 .tab-content{
     font-family: 'MedievalSharp', cursive;
     font-size: 1em;
@@ -44,6 +52,6 @@ h5{
     font-family: 'MedievalSharp', cursive;
     font-size: 1.5rem;
     color: black;
-    background-color: #ffffff;
+    background-color: transparent;
     text-align: center;
 }
