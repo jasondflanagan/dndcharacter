@@ -3,7 +3,7 @@ import { Form, Image, Card, Tabs, Tab, CardImg } from 'react-bootstrap';
 import {Input, Label, FormGroup, Col, Row, Modal, ModalBody, ModalHeader, Button } from 'reactstrap';
 import { RACES } from '../shared/RacesList';
 import { CLASSLIST } from '../shared/ClassesList';
-import { FadeTransform } from 'react-animation-components';
+import { FadeTransform, Fade } from 'react-animation-components';
 
 
 
@@ -68,93 +68,109 @@ class CharacterBuilder extends Component {
                 </div>
                 <div className='row'>
                     <div align="center" className='row'>
-                        <div className='col-sm-4'>
+                        <div className='col-4'>
                         {this.renderSelectedRace(this.state.displayedRaceIndex)}
                         </div>
-                        <div className='col-sm-4'>
+                        <div className='col-4'>
                         <Form>
-                                <FormGroup>
-                                        <div className="col-md-6">
-                                        <Label id="characterName">Name</Label>
-                                        <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleNameModal}><i className="fa fa-question" /></Button>
-                                        {this.renderNameModal()}
-                                        </div>
-                                    <Row>
-                                        <Input type="text" placeholder="Character Name"></Input>
-                                    </Row>
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label id="raceType">Race</Label>
-                                    <Input type="select" onChange={this.updateSelectedRace}>
-                                        <option value=''>Select A Race</option>                                    
-                                        <option value='0'>Dragonborn</option>
-                                        <option value='1'>Dwarf</option>
-                                        <option value='2'>Elf</option>
-                                        <option value='3'>Gnome</option>
-                                        <option value='4'>Half-Elf</option>
-                                        <option value='5'>Halfling</option>
-                                        <option value='6'>Half-Orc</option>
-                                        <option value='7'>Human</option>
-                                        <option value='8'>Tiefling</option>
-                                    </Input>
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label id="classType">Class</Label>
-                                    <Input type="select" onChange={this.updateSelectedClass}>
-                                        <option value=''>Select a Class</option>
-                                        <option value='0'>Barbarian</option>
-                                        <option value='1'>Bard</option>
-                                        <option value='2'>Cleric</option>
-                                        <option value='3'>Druid</option>
-                                        <option value='4'>Fighter</option>
-                                        <option value='5'>Monk</option>
-                                        <option value='6'>Paladin</option>
-                                        <option value='7'>Ranger</option>
-                                        <option value='8'>Sorcerer</option>                                   
-                                        <option value='9'>Warlock</option>
-                                        <option value='10'>Wizard</option>
-                                    </Input>
-                                </FormGroup>
+                                <Fade in delay="500">
+                                    <FormGroup>
+                                            <div className="col-md-6">
+                                            <Label id="characterName">Name</Label>
+                                            <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleNameModal}><i className="fa fa-question" /></Button>
+                                            {this.renderNameModal()}
+                                            </div>
+                                        <Row>
+                                            <Input type="text" placeholder="Character Name"></Input>
+                                        </Row>
+                                    </FormGroup>
+                                </Fade>
+                                <Fade in delay="700">
+                                    <FormGroup>
+                                        <Label id="raceType">Race</Label>
+                                        <Input type="select" onChange={this.updateSelectedRace}>
+                                            <option value=''>Select A Race</option>                                    
+                                            <option value='0'>Dragonborn</option>
+                                            <option value='1'>Dwarf</option>
+                                            <option value='2'>Elf</option>
+                                            <option value='3'>Gnome</option>
+                                            <option value='4'>Half-Elf</option>
+                                            <option value='5'>Halfling</option>
+                                            <option value='6'>Half-Orc</option>
+                                            <option value='7'>Human</option>
+                                            <option value='8'>Tiefling</option>
+                                        </Input>
+                                    </FormGroup>
+                                </Fade>
+                                <Fade in delay="900">
+                                    <FormGroup>
+                                        <Label id="classType">Class</Label>
+                                        <Input type="select" onChange={this.updateSelectedClass}>
+                                            <option value=''>Select a Class</option>
+                                            <option value='0'>Barbarian</option>
+                                            <option value='1'>Bard</option>
+                                            <option value='2'>Cleric</option>
+                                            <option value='3'>Druid</option>
+                                            <option value='4'>Fighter</option>
+                                            <option value='5'>Monk</option>
+                                            <option value='6'>Paladin</option>
+                                            <option value='7'>Ranger</option>
+                                            <option value='8'>Sorcerer</option>                                   
+                                            <option value='9'>Warlock</option>
+                                            <option value='10'>Wizard</option>
+                                        </Input>
+                                    </FormGroup>
+                                </Fade>
+                                <Fade in delay="1100">
                                 <Label id="AbilityScores" onClick={this.toggleAbilityModal}>Ability Scores</Label>
                                 {this.renderAbilityModal()}
                                 <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleAbilityModal}><i className="fa fa-question" /></Button>
-                                <FormGroup>
-                                    <Row style={{marginBottom: 5}}>
-                                        <Col md={4}>
-                                            <Label id="attStr">Strength</Label>
-                                            <Input type="number" id="strength" name="str" placeholder="str"/>
-                                        </Col>
-                                        <Col md={4}>
-                                            <Label id="attDex">Dexterity</Label>    
-                                            <Input type="number" id="dexterity" name="dex" placeholder="dex"/>
-                                        </Col>
-                                        <Col md={4}>
-                                            <Label id="attCon">Constitution</Label> 
-                                            <Input type="number" id="constitution" name="con" placeholder="con"/>
-                                        </Col>
-                                    </Row>
-                                    <Row style={{marginBottom: 5}}>
-                                        <Col md={4}>
-                                            <Label id="attCha">Charisma</Label> 
-                                            <Input type="number" id="charisma" name="cha" placeholder="cha"/>
-                                        </Col>
-                                        <Col md={4}>
-                                            <Label id="attWis">Wisdom</Label> 
-                                            <Input type="number" id="wisdom" name="wis" placeholder="wis"/>
-                                        </Col>
-                                        <Col md={4}>
-                                            <Label id="attInt">Intelligence</Label> 
-                                            <Input type="number" id="intelligence" name="int" placeholder="int"/>
-                                        </Col>
-                                    </Row>
-                                </FormGroup>
-                            <FormGroup>
-                                <Button style={{margin: 10}} color="light" onClick={this.toggleAdvancedOptions}>Advanced Options</Button>
-                            </FormGroup>
+                                </Fade>
+                                    <FormGroup>
+                                        <Fade in delay="1300">
+                                        <Row style={{marginBottom: 5}}>
+                                            <Col md={4}>
+                                                <Label id="attStr">Strength</Label>
+                                                <Input type="number" id="strength" name="str" placeholder="str"/>
+                                            </Col>
+                                            <Col md={4}>
+                                                <Label id="attDex">Dexterity</Label>    
+                                                <Input type="number" id="dexterity" name="dex" placeholder="dex"/>
+                                            </Col>
+                                            <Col md={4}>
+                                                <Label id="attCon">Constitution</Label> 
+                                                <Input type="number" id="constitution" name="con" placeholder="con"/>
+                                            </Col>
+                                        </Row>
+                                        </Fade>
+                                        <Fade in delay="1500">
+                                        <Row style={{marginBottom: 5}}>
+                                            <Col md={4}>
+                                                <Label id="attCha">Charisma</Label> 
+                                                <Input type="number" id="charisma" name="cha" placeholder="cha"/>
+                                            </Col>
+                                            <Col md={4}>
+                                                <Label id="attWis">Wisdom</Label> 
+                                                <Input type="number" id="wisdom" name="wis" placeholder="wis"/>
+                                            </Col>
+                                            <Col md={4}>
+                                                <Label id="attInt">Intelligence</Label> 
+                                                <Input type="number" id="intelligence" name="int" placeholder="int"/>
+                                            </Col>
+                                        </Row>
+                                        </Fade>
+                                    </FormGroup>
+                                
+                                <Fade in delay="1700">
+                                    <FormGroup>
+                                        <Button style={{margin: 10}} color="light" onClick={this.toggleAdvancedOptions}>Advanced Options</Button>
+                                    </FormGroup>
+                                </Fade>
                             {this.renderAdvancedOptions()}
+                            
                         </Form>
                         </div>
-                        <div className='col-sm-4'>
+                        <div className='col-4'>
                         {this.renderSelectedClass(this.state.displayedClassIndex)}
                         </div>
                     </div>
@@ -216,7 +232,6 @@ class CharacterBuilder extends Component {
         console.log(index)
         const classcard = this.state.classlist.filter(classindex => classindex.id === parseInt(index))[0]
         console.log(classcard)
-
         if (this.state.displayedClassIndex) {
         return(
             <FadeTransform
@@ -230,6 +245,7 @@ class CharacterBuilder extends Component {
             </FadeTransform>
         )
         }
+        
         return;
     }
 
@@ -238,37 +254,41 @@ class CharacterBuilder extends Component {
         if (this.state.advancedOptions) {
             return (
                 <>
-                <div className="col-sm-3"> 
+                <div className="col">
+                
                     <FormGroup>
-                        <Label id="Language">Language</Label>
-                        <Input type="select">
-                            <option>Select a Language</option>
-                            <option>Abyssal</option>
-                            <option>Celestial</option>
-                            <option>Daelkyr</option>
-                            <option>Deep Speech</option>
-                            <option>Draconic</option>
-                            <option>Dwarvish</option>
-                            <option>Giant</option>
-                            <option>Gith</option>
-                            <option>Gnomish</option>                                   
-                            <option>Goblin</option>
-                            <option>Halfling</option>
-                            <option>Infernal</option>
-                            <option>Kraul</option>
-                            <option>Leonin</option>
-                            <option>Loxodon</option>
-                            <option>Marquesian</option>
-                            <option>Minotaur</option>
-                            <option>Naush</option>
-                            <option>Orc</option>
-                            <option>Primordial</option>
-                            <option>Quari</option>
-                            <option>Sylvan</option>
-                            <option>Undercommon</option>
-                            <option>Vedalken</option>
-                            <option>Zemnian</option>
-                        </Input>
+                        <Fade in delay="200"> 
+                            <Label id="Language">Language</Label>
+                            <Input type="select">
+                                <option>Select a Language</option>
+                                <option>Abyssal</option>
+                                <option>Celestial</option>
+                                <option>Daelkyr</option>
+                                <option>Deep Speech</option>
+                                <option>Draconic</option>
+                                <option>Dwarvish</option>
+                                <option>Giant</option>
+                                <option>Gith</option>
+                                <option>Gnomish</option>                                   
+                                <option>Goblin</option>
+                                <option>Halfling</option>
+                                <option>Infernal</option>
+                                <option>Kraul</option>
+                                <option>Leonin</option>
+                                <option>Loxodon</option>
+                                <option>Marquesian</option>
+                                <option>Minotaur</option>
+                                <option>Naush</option>
+                                <option>Orc</option>
+                                <option>Primordial</option>
+                                <option>Quari</option>
+                                <option>Sylvan</option>
+                                <option>Undercommon</option>
+                                <option>Vedalken</option>
+                                <option>Zemnian</option>
+                            </Input>
+                        </Fade>
+                        <Fade in delay="400">
                         <Label>Alignment</Label>
                         <Input type="select">
                             <option>Select Alignment</option>
@@ -282,20 +302,31 @@ class CharacterBuilder extends Component {
                             <option>Neutral Evil</option>
                             <option>Chaotic Evil</option>
                         </Input>
+                        </Fade>
+                        <Fade in delay="600">
                         <Label>Faith</Label>
                         <Input type="text" placeholder="Faith"></Input>
+                        </Fade>
                     </FormGroup>
                 </div>
-                <div className="col-sm-7">
+                <div className="col">
                     <FormGroup>
+                    <Fade in delay="800">
                         <Label id="background">Background</Label>
                         <Input type="textarea" placeholder="Where did your character come from?"></Input>
+                    </Fade>
+                    <Fade in delay="1000">
                         <Label id="equipment">Equipment</Label>
                         <Input type="textarea" placeholder="List your equipment"></Input>
+                    </Fade>
+                    <Fade in delay="1200">
                         <Label id="physicalCharacteristics">Physical Characteristics</Label>
                         <Input type="textarea" placeholder="Describe your character's appearance?"></Input>
+                    </Fade>
+                    <Fade in delay="1400">
                         <Label id="Backstory">Backstory</Label>
                         <Input type="textarea" placeholder="What is your backstory?"></Input>
+                    </Fade>
                     </FormGroup>
                 </div>
             </>
