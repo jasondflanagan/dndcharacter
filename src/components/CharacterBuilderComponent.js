@@ -338,4 +338,4 @@ class CharacterBuilder extends Component {
         }
     }
 }
-export default CharacterBuilder
+export default CharacterBuilder 
