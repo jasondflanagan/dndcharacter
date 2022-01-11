@@ -119,7 +119,7 @@ class CharacterBuilder extends Component {
                                 {this.renderAbilityModal()}
                                 <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleAbilityModal}><i className="fa fa-question" /></Button>
                                 <FormGroup>
-                                    <Row>
+                                    <Row style={{marginBottom: 5}}>
                                         <Col md={4}>
                                             <Label id="attStr">Strength</Label>
                                             <Input type="number" id="strength" name="str" placeholder="str"/>
@@ -133,7 +133,7 @@ class CharacterBuilder extends Component {
                                             <Input type="number" id="constitution" name="con" placeholder="con"/>
                                         </Col>
                                     </Row>
-                                    <Row>
+                                    <Row style={{marginBottom: 5}}>
                                         <Col md={4}>
                                             <Label id="attCha">Charisma</Label> 
                                             <Input type="number" id="charisma" name="cha" placeholder="cha"/>
