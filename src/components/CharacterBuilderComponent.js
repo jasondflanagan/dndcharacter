@@ -68,8 +68,11 @@ class CharacterBuilder extends Component {
                 </div>
                 <div className='row'>
                     <div align="center" className='row'>
+                        <div className='col-sm-4'>
+                        {this.renderSelectedRace(this.state.displayedRaceIndex)}
+                        </div>
+                        <div className='col-sm-4'>
                         <Form>
-                            <div className="col-sm-3">
                                 <FormGroup>
                                         <div className="col-md-6">
                                         <Label id="characterName">Name</Label>
@@ -79,10 +82,7 @@ class CharacterBuilder extends Component {
                                     <Row>
                                         <Input type="text" placeholder="Character Name"></Input>
                                     </Row>
-                                
                                 </FormGroup>
-                            </div>
-                            <div className="col-sm-3">    
                                 <FormGroup>
                                     <Label id="raceType">Race</Label>
                                     <Input type="select" onChange={this.updateSelectedRace}>
@@ -98,11 +98,6 @@ class CharacterBuilder extends Component {
                                         <option value='8'>Tiefling</option>
                                     </Input>
                                 </FormGroup>
-                            </div>
-                            <div className='col-sm-6'>
-                                    {this.renderSelectedRace(this.state.displayedRaceIndex)}
-                            </div>
-                            <div className="col-sm-3">
                                 <FormGroup>
                                     <Label id="classType">Class</Label>
                                     <Input type="select" onChange={this.updateSelectedClass}>
@@ -120,48 +115,48 @@ class CharacterBuilder extends Component {
                                         <option value='10'>Wizard</option>
                                     </Input>
                                 </FormGroup>
-                            </div>
-                            <div className='col-sm-6'>
-                                {this.renderSelectedClass(this.state.displayedClassIndex)}
-                            </div>
-                            <div className="col-sm-3 col-md-5">
                                 <Label id="AbilityScores" onClick={this.toggleAbilityModal}>Ability Scores</Label>
                                 {this.renderAbilityModal()}
                                 <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleAbilityModal}><i className="fa fa-question" /></Button>
                                 <FormGroup>
                                     <Row>
-                                        <Col md={2}>
+                                        <Col md={4}>
                                             <Label id="attStr">Strength</Label>
                                             <Input type="number" id="strength" name="str" placeholder="str"/>
                                         </Col>
-                                        <Col md={2}>
+                                        <Col md={4}>
                                             <Label id="attDex">Dexterity</Label>    
                                             <Input type="number" id="dexterity" name="dex" placeholder="dex"/>
                                         </Col>
-                                        <Col md={2}>
+                                        <Col md={4}>
                                             <Label id="attCon">Constitution</Label> 
                                             <Input type="number" id="constitution" name="con" placeholder="con"/>
                                         </Col>
-                                        <Col md={2}>
+                                    </Row>
+                                    <Row>
+                                        <Col md={4}>
                                             <Label id="attCha">Charisma</Label> 
                                             <Input type="number" id="charisma" name="cha" placeholder="cha"/>
                                         </Col>
-                                        <Col md={2}>
+                                        <Col md={4}>
                                             <Label id="attWis">Wisdom</Label> 
                                             <Input type="number" id="wisdom" name="wis" placeholder="wis"/>
                                         </Col>
-                                        <Col md={2}>
+                                        <Col md={4}>
                                             <Label id="attInt">Intelligence</Label> 
                                             <Input type="number" id="intelligence" name="int" placeholder="int"/>
                                         </Col>
                                     </Row>
                                 </FormGroup>
-                            </div>
                             <FormGroup>
                                 <Button style={{margin: 10}} color="light" onClick={this.toggleAdvancedOptions}>Advanced Options</Button>
                             </FormGroup>
                             {this.renderAdvancedOptions()}
                         </Form>
+                        </div>
+                        <div className='col-sm-4'>
+                        {this.renderSelectedClass(this.state.displayedClassIndex)}
+                        </div>
                     </div>
                 </div>
                 </div>
