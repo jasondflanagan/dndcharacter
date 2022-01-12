@@ -10,12 +10,12 @@ function Footer() {
                         <div className="row">
                             <div className="col-sm-3 offset-1">
                                 <div>
-                                    <h5>Links</h5>
+                                    <h5 className='mt-3'></h5>
                                     <ul className="list-unstyled">
-                                        <li><a href="/home" className='nav-link' style={{fontSize: "1em", color: "#eeec91"}}>Home</a></li>
-                                        <li><a href="/races" className='nav-link' style={{fontSize: "1em", color: "#eeec91"}}>Races</a></li>
-                                        <li><a href="/classes" className='nav-link' style={{fontSize: "1em", color: "#eeec91"}}>Classes</a></li>
-                                        <li><a href="/builder" className='nav-link' style={{fontSize: "1em", color: "#eeec91"}}>Character Builder</a></li>
+                                        <li><a href="/home" className='nav-link-footer'>Home</a></li>
+                                        <li><a href="/races" className='nav-link-footer'>Races</a></li>
+                                        <li><a href="/classes" className='nav-link-footer'>Classes</a></li>
+                                        <li><a href="/builder" className='nav-link-footer'>Character Builder</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -30,8 +30,9 @@ function Footer() {
                             </div>
                             <div className="col-sm-5 text-center">
                                 <div>
-                                    <a className="btn btn-link nav-link" href="tel:+18887852625" style={{fontSize: ".9em", color: "#eeec91", marginTop:'2em'}}><i className="fa fa-phone" />  888.785.2625<br /></a>
-                                    <a className="btn btn-link nav-link" href="mailto:dungeonsanddragons101@gmail.com" style={{fontSize: "1em", color: "#eeec91"}}><i className="fa fa-envelope-o" />  dungeonsanddragons101@gmail.com</a>
+                                <h5></h5>
+                                    <a className="btn btn-link" href="tel:+18887852625"><i className="fa fa-phone" />  888.785.2625<br /></a>
+                                    <a className="btn btn-link" href="mailto:dungeonsanddragons101@gmail.com"><i className="fa fa-envelope-o" />  dungeonsanddragons101@gmail.com</a>
                                 </div>
                             </div>
                         </div>

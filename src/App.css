@@ -30,6 +30,31 @@
     border: 0 !important;
 }
 
+.nav-link-header:hover{
+    color: #527754;
+}
+
+.nav-link-header{
+    font-size: 1.5em;
+    color: #eeec91;
+    text-decoration: none;
+    margin-left: 2px;
+    margin-right: 15px;
+}
+
+.nav-link-footer{
+    font-size: 1em;
+    color: #eeec91;
+    text-decoration: none;
+}
+
+.btn-link{
+    margin-top: 5px;
+    font-size: 1em !important;
+    color: #eeec91 !important;
+    text-decoration: none !important;
+}
+
 .nav-tabs{
     background-color: transparent;
     border: 0 !important;

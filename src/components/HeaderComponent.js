@@ -25,22 +25,22 @@ class Header extends Component {
                                 <Collapse isOpen={this.state.isNavOpen} navbar>
                                     <Nav navbar style={{align: 'center', marginLeft: '7em'}}>
                                         <NavItem >
-                                            <NavLink className="nav-link" style={{fontSize: "1.4em", color: "#eeec91"}} to="/home">
+                                            <NavLink className="nav-link-header" to="/home">
                                                 <i className="fa fa-university fa-lg" /> Home
                                             </NavLink>
                                         </NavItem>
                                         <NavItem>
-                                            <NavLink className="nav-link" style={{fontSize: "1.4em", color: "#eeec91"}} to="/races">
+                                            <NavLink className="nav-link-header"  to="/races">
                                                 <i className="fa fa-list fa-lg" /> Races
                                             </NavLink>
                                         </NavItem>
                                         <NavItem>
-                                            <NavLink className="nav-link" style={{fontSize: "1.4em", color: "#eeec91"}} to="/classes">
+                                            <NavLink className="nav-link-header" to="/classes">
                                                 <i className="fa fa-info fa-lg" /> Classes
                                             </NavLink>
                                         </NavItem>
                                         <NavItem>
-                                            <NavLink className="nav-link" style={{fontSize: "1.4em", color: "#eeec91"}} to="/builder">
+                                            <NavLink className="nav-link-header" to="/builder">
                                                 <i className="fa fa-wrench fa-lg" />Character Builder
                                             </NavLink>
                                         </NavItem>
