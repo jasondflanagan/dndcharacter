@@ -13,7 +13,7 @@ class ClassesPage extends Component {
     render() {
         const classeslist = this.state.classes.map(classtype => {
             return (
-                <Card key={classtype.id} className="col-4" style={{borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }}>
+                <Card key={classtype.id} className="col-4">
                     <Card.Title>{classtype.name}</Card.Title>
                     <Tabs defaultActiveKey="image">
                         <Tab eventKey="image" title='Image'>

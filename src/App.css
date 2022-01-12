@@ -34,6 +34,10 @@
     color: #527754;
 }
 
+.nav-link-footer:hover{
+    color: #527754;
+}
+
 .nav-link-header{
     font-size: 1.5em;
     color: #eeec91;
@@ -80,6 +84,11 @@ h5{
     font-size: 1.20em; 
 }
 
+.card{
+    border-width: 0 !important;
+    border-color: transparent !important;
+    background-color: transparent !important;
+}
 .card-title{
     font-family: 'MedievalSharp', cursive;
     font-size: 1.5rem;
