@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Image, Card, Tabs, Tab, CardImg } from 'react-bootstrap';
+import { Form, Card, CardImg } from 'react-bootstrap';
 import {Input, Label, FormGroup, Col, Row, Modal, ModalBody, ModalHeader, Button } from 'reactstrap';
 import { RACES } from '../shared/RacesList';
 import { CLASSLIST } from '../shared/ClassesList';
