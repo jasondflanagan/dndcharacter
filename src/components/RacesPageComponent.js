@@ -16,7 +16,7 @@ class RacesPage extends Component {
             return (
                 <Card key={race.id} className="col-4">
                     <Card.Title>{race.name}</Card.Title>
-                    <Tabs defaultActiveKey="image">
+                    <Tabs defaultActiveKey="image" color='black'>
                         <Tab eventKey="image" title='Image' backgroundColor='transparent'>
                             <Image fluid src={race.image} alt={race.name}/>
                         </Tab>
