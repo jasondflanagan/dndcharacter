@@ -34,6 +34,10 @@
     color: #527754;
 }
 
+.nav-link-footer:hover{
+    color: #527754;
+}
+
 .nav-link-header{
     font-size: 1.5em;
     color: #eeec91;
