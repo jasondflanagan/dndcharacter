@@ -22,14 +22,17 @@
 
 .nav-link{
     background-color: transparent;
+    color: black !important;
 }
 
-.nav-link>a:active{
-    background-color: transparent;
+.nav-link.active{
+    background-color: transparent !important;
+    border: 0 !important;
 }
 
 .nav-tabs{
     background-color: transparent;
+    border: 0 !important;
 }
 
 .tab-content{
