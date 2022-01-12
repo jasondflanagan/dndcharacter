@@ -16,13 +16,8 @@ class RacesPage extends Component {
             return (
                 <Card key={race.id} className="col-4">
                     <Card.Title>{race.name}</Card.Title>
-<<<<<<< HEAD
-                    <Tabs alignItems="center" defaultActiveKey="image" color='black'>
-                        <Tab alignItems="center" eventKey="image" title='Image' backgroundColor='transparent'>
-=======
-                    <Tabs defaultActiveKey="image">
+                    <Tabs defaultActiveKey="image" color='black'>
                         <Tab eventKey="image" title='Image' backgroundColor='transparent'>
->>>>>>> 450a3923aade71e8c6295db4c74d9f518380890f
                             <Image fluid src={race.image} alt={race.name}/>
                         </Tab>
                         <Tab eventKey="tab1title" title={race.tab1title}>
