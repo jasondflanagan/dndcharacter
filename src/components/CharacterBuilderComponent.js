@@ -213,15 +213,10 @@ class CharacterBuilder extends Component {
 
         if (this.state.displayedRaceIndex) {
         return(
-            <FadeTransform
-            in
-            transformProps={{
-                exitTransform: 'scale(0.7) translateY(-20%)'
-            }}>
-                <Card style={{ borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }} key={racecard.id} className="col col-md-7 ">
+
+                <Card key={racecard.id} className="col-md-9 builder-card">
                     <CardImg src={racecard.image} alt={racecard.name} />
                 </Card>
-            </FadeTransform>
         )
         }
         return;
@@ -234,15 +229,10 @@ class CharacterBuilder extends Component {
         console.log(classcard)
         if (this.state.displayedClassIndex) {
         return(
-            <FadeTransform
-            in
-            transformProps={{
-                exitTransform: 'scale(0.7) translateY(-20%)'
-            }}>
-            <Card style={{ borderWidth: 0, borderColor: 'transparent', backgroundColor: 'transparent', shadowOpacity: 0 }} key={classcard.id} className="row" className="col col-md-7">
+            <Card key={classcard.id} className='col-md-9 builder-card'>
                 <CardImg src={classcard.imagetab} alt={classcard.name} />
             </Card>
-            </FadeTransform>
+
         )
         }
         
