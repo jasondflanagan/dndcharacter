@@ -35,7 +35,7 @@ class RacesPage extends Component {
         });
 
         return (
-            <div style={{backgroundImage: 'url(assets/parchment2.jpg)', backgroundSize: 'contain', backgroundRepeat: 'repeat'}}>
+            <div style={{backgroundImage: 'url(assets/parchment2.jpg)', backgroundSize: 'cover'}}>
             <div className="container">
                 <div className='row pagetitle'>
                     <p>Explore Available Races</p>
