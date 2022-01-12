@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Card, CardImg } from 'react-bootstrap';
-import {Input, Label, FormGroup, Col, Row, Modal, ModalBody, ModalHeader, Button } from 'reactstrap';
+import {Input, Label, FormGroup, Col, Row, Modal, ModalBody, ModalHeader, Button} from 'reactstrap';
 import { RACES } from '../shared/RacesList';
 import { CLASSLIST } from '../shared/ClassesList';
 import { FadeTransform, Fade } from 'react-animation-components';
@@ -18,7 +18,9 @@ class CharacterBuilder extends Component {
             displayedClassIndex: '',
             isAbilityModalOpen: false,
             isNameModalOpen: false,
-            advancedOptions: false
+            advancedOptions: false,
+            questionName: false,
+            questionAbility: false
 
         }
         this.updateSelectedRace = this.updateSelectedRace.bind(this)
@@ -26,6 +28,8 @@ class CharacterBuilder extends Component {
         this.toggleAbilityModal = this.toggleAbilityModal.bind(this)
         this.toggleNameModal = this.toggleNameModal.bind(this)
         this.toggleAdvancedOptions = this.toggleAdvancedOptions.bind(this)
+        this.toggleQuestionName = this.toggleQuestionName.bind(this)
+        this.toggleQuestionAbility = this.toggleQuestionAbility.bind(this)
     }
 
     toggleAbilityModal() {
@@ -57,6 +61,16 @@ class CharacterBuilder extends Component {
             displayedClassIndex: selected.target.value
         })
     }
+    toggleQuestionName(){
+        this.setState ({
+            questionName: !this.state.questionName
+        })
+    }
+    toggleQuestionAbility(){
+        this.setState ({
+            questionAbility: !this.state.questionAbility
+        })
+    }
 
     render() {
 
@@ -76,8 +90,8 @@ class CharacterBuilder extends Component {
                                 <Fade in delay="200">
                                     <FormGroup>
                                             <div className="col-md-6">
-                                            <Label id="characterName">Name</Label>
-                                            <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleNameModal}><i className="fa fa-question" /></Button>
+                                            <Label id="characterName" onClick={this.toggleNameModal}>Name</Label>
+                                            <i style={{margin: 10}} onClick={this.toggleNameModal} className={this.state.questionName ? 'fa fa-question-circle' : 'fa fa-question-circle-o'} onMouseOut={this.toggleQuestionName} onMouseOver={this.toggleQuestionName}/>
                                             {this.renderNameModal()}
                                             </div>
                                         <Row>
@@ -124,7 +138,7 @@ class CharacterBuilder extends Component {
                                 <Fade in delay="800">
                                 <Label id="AbilityScores" onClick={this.toggleAbilityModal}>Ability Scores</Label>
                                 {this.renderAbilityModal()}
-                                <Button style={{margin: 10}} size="sm" outline="true" onClick={this.toggleAbilityModal}><i className="fa fa-question" /></Button>
+                                <i  style={{margin: 10}} onClick={this.toggleAbilityModal} className={this.state.questionAbility ? 'fa fa-question-circle' : 'fa fa-question-circle-o'} onMouseOut={this.toggleQuestionAbility} onMouseOver={this.toggleQuestionAbility}/>
                                 </Fade>
                                     <FormGroup>
                                         <Fade in delay="1000">
@@ -229,7 +243,7 @@ class CharacterBuilder extends Component {
         console.log(classcard)
         if (this.state.displayedClassIndex) {
         return(
-            <Card key={classcard.id} className='col-md-9 builder-card'>
+            <Card key={classcard.id} className="col-md-9 builder-card">
                 <CardImg src={classcard.imagetab} alt={classcard.name} />
             </Card>
 
