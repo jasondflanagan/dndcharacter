@@ -313,7 +313,7 @@ class CharacterBuilder extends Component {
                         </Fade>
                     </FormGroup>
                 </div>
-                <div className="col">
+                <div style={{marginBottom: '10px'}} className="col">
                     <FormGroup>
                     <Fade in delay="800">
                         <Label id="background">Background</Label>
@@ -330,6 +330,10 @@ class CharacterBuilder extends Component {
                     <Fade in delay="1400">
                         <Label id="Backstory">Backstory</Label>
                         <Input type="textarea" placeholder="What is your backstory?"></Input>
+                    </Fade>
+                    <Fade in delay="1600">
+                        <Label id="Spells">Spells</Label>
+                        <Input type="textarea" placeholder="Spell List"></Input>
                     </Fade>
                     </FormGroup>
                 </div>
