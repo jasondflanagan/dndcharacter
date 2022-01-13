@@ -80,6 +80,10 @@
 
 h1{
     font-family: 'MedievalSharp', cursive;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    color:#eeec91 !important;
 }
 
 h5{
@@ -116,7 +120,6 @@ h5{
         transform: scale(1);
     }
 }
-
 
 .builder-card{
 

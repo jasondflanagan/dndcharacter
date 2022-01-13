@@ -27,14 +27,14 @@ class Home extends Component {
                 speed={-.1}
                 style={{height: "100px"}}
                 >
-                  <h1 style={{justifyContent: 'center', textAlign:'center', alignItems: 'center', color: "#eeec91"}}>Welcome To The DND Tavern</h1>
+                  <h1>Welcome To The DND Tavern</h1>
                 </ParallaxLayer>
                 <ParallaxLayer
                 offset={1.5}
                 speed={.2}
                 style={{height: "100px"}}
                 >
-                  <h1 style={{justifyContent: 'center', textAlign:'center', alignItems: 'center', color: "#eeec91"}}>Grab Your Equipment</h1>
+                  <h1>Grab Your Equipment</h1>
                 </ParallaxLayer>
                 <ParallaxLayer
                 offset={1.9}
@@ -51,7 +51,7 @@ class Home extends Component {
                 speed={.2}
                 style={{height: "100px"}}
                 >
-                  <h1 style={{justifyContent: 'center', textAlign:'center', alignItems: 'center', color: "#eeec91"}}>Gather Your Friends</h1>
+                  <h1>Gather Your Friends</h1>
                 </ParallaxLayer>
                 <ParallaxLayer
                 offset={2.9}
@@ -68,7 +68,7 @@ class Home extends Component {
                 speed={.2}
                 style={{height: "100px"}}
                 >
-                  <h1 style={{justifyContent: 'center', textAlign:'center', alignItems: 'center', color: "#eeec91"}}>And Prepare For Battle!</h1>
+                  <h1>And Prepare For Battle!</h1>
                 </ParallaxLayer>
                 <ParallaxLayer
                 offset={3.9}
