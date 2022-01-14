@@ -3,7 +3,7 @@ import { Form, Card, CardImg } from 'react-bootstrap';
 import {Input, Label, FormGroup, Col, Row, Modal, ModalBody, ModalHeader, Button} from 'reactstrap';
 import { RACES } from '../shared/RacesList';
 import { CLASSLIST } from '../shared/ClassesList';
-import { FadeTransform, Fade } from 'react-animation-components';
+import { Fade } from 'react-animation-components';
 
 
 
