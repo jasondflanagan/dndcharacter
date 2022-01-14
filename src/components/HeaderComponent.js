@@ -20,10 +20,10 @@ class Header extends Component {
         return (
             <React.Fragment>
                 <Navbar sticky="top" expand="md">
-                    <div className="container">
+                    <div className="container" id="nav-row">
                         <div className="row">
                                 <Collapse isOpen={this.state.isNavOpen} navbar>
-                                    <Nav navbar style={{align: 'center', marginLeft: '7em'}}>
+                                    <Nav navbar>
                                         <NavItem >
                                             <NavLink className="nav-link-header" to="/home">
                                                 <i className="fa fa-university fa-lg" /> Home
@@ -41,7 +41,7 @@ class Header extends Component {
                                         </NavItem>
                                         <NavItem>
                                             <NavLink className="nav-link-header" to="/builder">
-                                                <i className="fa fa-wrench fa-lg" />Character Builder
+                                                <i className="fa fa-wrench fa-lg" /> Character Builder
                                             </NavLink>
                                         </NavItem>
                                     </Nav>
