@@ -20,8 +20,13 @@ class CharacterBuilder extends Component {
             isNameModalOpen: false,
             advancedOptions: false,
             questionName: false,
-            questionAbility: false
-
+            questionAbility: false,
+            strength: null,
+            dexterity: null,
+            constitution: null,
+            charisma: null,
+            wisdom: null,
+            intelligence: null
         }
         this.updateSelectedRace = this.updateSelectedRace.bind(this)
         this.updateSelectedClass = this.updateSelectedClass.bind(this)
@@ -30,6 +35,39 @@ class CharacterBuilder extends Component {
         this.toggleAdvancedOptions = this.toggleAdvancedOptions.bind(this)
         this.toggleQuestionName = this.toggleQuestionName.bind(this)
         this.toggleQuestionAbility = this.toggleQuestionAbility.bind(this)
+        this.rollStats = this.rollStats.bind(this)
+    }
+
+    rollStat() {
+        return (Math.floor(Math.random() * 20) +1)
+    }
+
+    rollStats(){
+        console.log(this.state.strength) 
+        this.setState({
+            strength: this.rollStat()
+        })
+        console.log(this.state.dexterity)
+        this.setState({
+            dexterity: this.rollStat()
+        })
+
+        console.log(this.state.constitution)
+        this.setState({
+            constitution: this.rollStat()
+        })
+        console.log(this.state.charisma)
+        this.setState({
+            charisma: this.rollStat()
+        })
+        console.log(this.state.wisdom)
+        this.setState({
+            wisdom: this.rollStat()
+        })
+        console.log(this.state.intelligence)
+        this.setState({
+            intelligence: this.rollStat()
+        })
     }
 
     toggleAbilityModal() {
@@ -145,15 +183,18 @@ class CharacterBuilder extends Component {
                                         <Row style={{marginBottom: 5}}>
                                             <Col md={4}>
                                                 <Label id="attStr">Strength</Label>
-                                                <Input type="number" id="strength" name="str" placeholder="str"/>
+                                                <Input type="number" id="strength" name="str" placeholder={this.state.strength}/>
+                                                <Button onClick={()=> this.setState({strength: this.rollStat()})}>Roll</Button>
                                             </Col>
                                             <Col md={4}>
                                                 <Label id="attDex">Dexterity</Label>    
-                                                <Input type="number" id="dexterity" name="dex" placeholder="dex"/>
+                                                <Input type="number" id="dexterity" name="dex" placeholder={this.state.dexterity}/>
+                                                <Button onClick={()=> {this.setState({dexterity: this.rollStat()})}}>Roll</Button>
                                             </Col>
                                             <Col md={4}>
                                                 <Label id="attCon">Constitution</Label> 
-                                                <Input type="number" id="constitution" name="con" placeholder="con"/>
+                                                <Input type="number" id="constitution" name="con" placeholder={this.state.constitution}/>
+                                                <Button onClick={()=> this.setState({constitution: this.rollStat()})}>Roll</Button>
                                             </Col>
                                         </Row>
                                         </Fade>
@@ -161,15 +202,18 @@ class CharacterBuilder extends Component {
                                         <Row style={{marginBottom: 5}}>
                                             <Col md={4}>
                                                 <Label id="attCha">Charisma</Label> 
-                                                <Input type="number" id="charisma" name="cha" placeholder="cha"/>
+                                                <Input type="number" id="charisma" name="cha" placeholder={this.state.charisma}/>
+                                                <Button onClick={()=> this.setState({charisma: this.rollStat()})}>Roll</Button>
                                             </Col>
                                             <Col md={4}>
                                                 <Label id="attWis">Wisdom</Label> 
-                                                <Input type="number" id="wisdom" name="wis" placeholder="wis"/>
+                                                <Input type="number" id="wisdom" name="wis" placeholder={this.state.wisdom}/>
+                                                <Button onClick={()=> this.setState({wisdom: this.rollStat()})}>Roll</Button>
                                             </Col>
                                             <Col md={4}>
                                                 <Label id="attInt">Intelligence</Label> 
-                                                <Input type="number" id="intelligence" name="int" placeholder="int"/>
+                                                <Input type="number" id="intelligence" name="int" placeholder={this.state.intelligence}/>
+                                                <Button onClick={()=> this.setState({intelligence: this.rollStat()})}>Roll</Button>
                                             </Col>
                                         </Row>
                                         </Fade>
