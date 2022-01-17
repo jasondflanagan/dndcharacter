@@ -44,6 +44,7 @@ class CharacterBuilder extends Component {
         for (let i = 0; i < 3; i++) {
             rollTotal += (Math.floor(Math.random() * 6) +1)
             if (i < lowestRoll) {
+                console.log(i)
                 lowestRoll = i
             }
         }
@@ -274,9 +275,7 @@ class CharacterBuilder extends Component {
 
     renderSelectedRace(index){
 
-        console.log(index)
         const racecard = this.state.races.filter(raceindex => raceindex.id === parseInt(index))[0]
-        console.log(racecard)
 
         if (this.state.displayedRaceIndex) {
         return(
@@ -291,9 +290,8 @@ class CharacterBuilder extends Component {
 
     renderSelectedClass(index){
 
-        console.log(index)
         const classcard = this.state.classlist.filter(classindex => classindex.id === parseInt(index))[0]
-        console.log(classcard)
+        
         if (this.state.displayedClassIndex) {
         return(
             <Card key={classcard.id} className="col-md-9 builder-card">
