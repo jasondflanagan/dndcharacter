@@ -39,17 +39,26 @@ class CharacterBuilder extends Component {
     }
 
     rollStat() {
-        let lowestRoll = 0
+        let lowRoll = (Math.floor(Math.random() * 6) +1)
+        console.log(lowRoll)
+        let currentRoll = 0
         let rollTotal = 0
         for (let i = 0; i < 3; i++) {
-            rollTotal += (Math.floor(Math.random() * 6) +1)
-            if (i < lowestRoll) {
-                console.log(i)
-                lowestRoll = i
+            currentRoll = (Math.floor(Math.random() * 6) +1)
+            console.log("current roll " + currentRoll)
+            if (currentRoll <= lowRoll) {
+                rollTotal += lowRoll
+                lowRoll = currentRoll
+                console.log("reassigned low roll value " + lowRoll)
+                console.log("if roll total " + rollTotal)
             }
+            else{
+                rollTotal += currentRoll
+                console.log("else roll total " + rollTotal)
+            }
+            console.log("end of loop roll total " + rollTotal)
         }
-        rollTotal = (rollTotal - lowestRoll)
-        return (rollTotal)
+        return rollTotal
     }
 
     rollStats(){
@@ -291,7 +300,7 @@ class CharacterBuilder extends Component {
     renderSelectedClass(index){
 
         const classcard = this.state.classlist.filter(classindex => classindex.id === parseInt(index))[0]
-        
+
         if (this.state.displayedClassIndex) {
         return(
             <Card key={classcard.id} className="col-md-9 builder-card">
