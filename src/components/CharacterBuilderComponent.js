@@ -39,7 +39,7 @@ class CharacterBuilder extends Component {
     }
 
     rollStat() {
-        let lowestRoll = (Math.floor(Math.random() * 6) +1)
+        let lowestRoll = 0
         let rollTotal = 0
         for (let i = 0; i < 3; i++) {
             rollTotal += (Math.floor(Math.random() * 6) +1)
