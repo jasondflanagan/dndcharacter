@@ -39,16 +39,24 @@ class CharacterBuilder extends Component {
     }
 
     rollStat() {
-        let lowestRoll = 0
+        let lowRoll = 6
+        console.log(lowRoll)
+        let currentRoll = 0
         let rollTotal = 0
-        for (let i = 0; i < 3; i++) {
-            rollTotal += (Math.floor(Math.random() * 6) +1)
-            if (i < lowestRoll) {
-                lowestRoll = i
+        for (let i = 0; i < 4; i++) {
+            currentRoll = (Math.floor(Math.random() * 6) +1)
+            console.log("Roll #" + (i+1), "= " + currentRoll)
+            if (currentRoll < lowRoll) {
+                lowRoll = currentRoll
+                console.log("low roll " + lowRoll)
             }
+            rollTotal += currentRoll
+            console.log("end of loop roll total " + rollTotal)
         }
-        rollTotal = (rollTotal - lowestRoll)
-        return (rollTotal)
+        console.log("rollTotal = " + rollTotal) 
+        rollTotal -= lowRoll
+        console.log("- lowRoll" + lowRoll, "= rollTotal " + rollTotal)
+        return rollTotal
     }
 
     rollStats(){
